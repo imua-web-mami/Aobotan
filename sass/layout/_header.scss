@@ -2,6 +2,7 @@
 
 .header {
 	padding-top: 74px;
+	line-height: 1;
 }
 
 .header__logo {
@@ -20,7 +21,6 @@
 	width: 200px;
 	margin-top: 25px;
 	margin-inline: auto;
-	line-height: 1;
 	font-weight: bold;
 }
 
@@ -43,10 +43,10 @@
 
 .header__about-item,
 .header__service-item {
+font-size: 14px;
 
 	a {
 		color: $text-color;
-		font-size: 14px;
 	}
 }
 
@@ -55,10 +55,27 @@
 	margin-top: 24px;
 }
 
-.header__nav-contact::before {
-	content: "";
-	background-image: url(../../img/mail-icon.png);
-	background-size: contain;
-	width: 24px;
-	height: 24px;
+.header__nav-contact {
+	// padding-left: 40px;
+	// position: relative;
+
+	img {
+		width: 24px;
+		height: 24px;
+		margin-right: 16px;
+		vertical-align: top;
+	}
+
+// 	&::before {
+// 		content: "";
+// 		background: url(../img/mail-icon.png) no-repeat;
+// 		display: block;
+// 		background-size: contain;
+// 		width: 24px;
+// 		height: 24px;
+// 		position: absolute;
+// 		left: 0;
+// 		top: -20px;
+// }
+
 }
