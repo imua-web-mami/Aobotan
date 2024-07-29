@@ -1,0 +1,26 @@
+$breakpoints: (//画面幅変数の定義
+    xl: 1728px,//16インチMacBook Pro
+    lg: 1024px,//iPad Pro 12.9, 1920
+    md: 820px,//iPad第10世代、以下SP版デザイン
+    sm: 500px,//iPhone15Pro
+    ) !default;
+
+$mediaquerys: (//ここで以上、以下要素を変数に追加
+    xl: "screen and (min-width: #{map-get($breakpoints, 'xl')})",//1728px以上
+    lg: "screen and (max-width: #{map-get($breakpoints, 'lg')})",//1024px以下
+    md: "screen and (max-width: #{map-get($breakpoints, 'md')})",//820px以下
+    sm: "screen and (max-width: #{map-get($breakpoints, 'sm')})",//430px以下
+    ) !default;
+
+// メディアクエリを "@include mq(){}"で書くことができるように関数mq(x)を定義 
+@mixin mq($mediaquery: md) {
+    @media #{map-get($mediaquerys, $mediaquery)} {
+        @content;
+    }
+}
+
+$main-color: #4282B8;
+$accent-color: #B1C6DC;
+$text-color: #000000;
+$bg-color: #F8F8F8;
+$white: #fff;

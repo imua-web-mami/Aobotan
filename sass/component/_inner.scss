@@ -1,0 +1,13 @@
+@use "../global/forward" as*;
+
+.inner {
+  width: 100%;
+  height: 100%;
+  max-width: 1080px;
+  padding-inline: 60px;
+  margin-inline: auto;
+
+	@include mq(md) {
+		padding-inline: 30px;
+	}
+}

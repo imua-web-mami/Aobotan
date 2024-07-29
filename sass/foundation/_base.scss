@@ -1,0 +1,21 @@
+@use "../global/forward" as*;
+
+body {
+	font-size: 16px;
+	line-height: 1.8;
+	color: $text-color;
+	font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.type-column {
+	display: flex;
+	flex-direction: row;
+}
+
+.header {
+	width: 19.5%;
+}
+
+.main {
+	width: 80.5%;
+}

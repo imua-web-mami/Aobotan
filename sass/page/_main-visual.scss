@@ -1,0 +1,25 @@
+@use "../global/forward" as*;
+
+.main {
+	position: relative;
+}
+
+.main-visual__contents {
+	background: $bg-color;
+	width: 1120px;
+	height: 873px;
+	border-radius: 50px;
+	margin-top: 40px;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 727px;
+		height: 727px;
+		background: $main-color;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -10;
+	}
+}

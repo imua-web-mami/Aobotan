@@ -1,0 +1,9 @@
+@use "../global/forward" as*;
+
+.sp-br {
+	display: none;
+
+	@include mq(md) {
+		display: block;
+	}
+}
