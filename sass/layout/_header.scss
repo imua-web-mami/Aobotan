@@ -3,6 +3,9 @@
 .header {
 	padding-top: 74px;
 	line-height: 1;
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 
 .header__logo {
@@ -15,6 +18,14 @@
 		height: 100%;
 		object-fit: contain;
 	}
+
+	a {
+		transition: .3s;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
 }
 
 .header__nav {
@@ -26,38 +37,83 @@
 
 .header__nav-item {
 	width: inherit;
-	padding: 32px 0;
 	border-bottom: 1px solid $accent-color;
 
 	a {
+		padding: 32px 0;
+		display: block;
 		color: $text-color;
 		font-size: 20px;
+		transition: .3s;
+
+		&:hover {
+			opacity: 0.7;
+		}
 	}
+}
+
+.title {
+	position: relative;
+	transition: all .5s ease;
+}
+
+summary {
+	list-style: none; /* デフォルトのマーカーを非表示にする */
+	cursor: pointer;  /* カーソルをポインターにする */
+}
+
+.title::before,
+.title::after {
+	position: absolute;
+	content: '';
+	width: 24px;
+	height: 1px;
+	background-color: $main-color;
+
+}
+
+.title::before {
+	bottom: 42px;
+	right: 0;
+	transform: rotate(0deg);
+}
+
+.title::after {
+	bottom: 42px;
+	right: 0;
+	transform: rotate(90deg);
+}
+
+/* closeというクラスがついたら形状変化 */
+.title.close::after {
+	display: none;
 }
 
 .header__about-list,
 .header__service-list {
-	padding: 32px 0 32px 17px;
+	display: none;
+	padding: 20px 0 20px 17px;
 	border-bottom: 1px solid $accent-color;
 }
 
 .header__about-item,
 .header__service-item {
-font-size: 14px;
+	font-size: 14px;
 
 	a {
+		font-size: 14px;
+		display: block;
+		padding: 12px 0;
 		color: $text-color;
+		transition: .3s;
+
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 }
 
-.header__about-item + .header__about-item,
-.header__service-item + .header__service-item {
-	margin-top: 24px;
-}
-
 .header__nav-contact {
-	// padding-left: 40px;
-	// position: relative;
 
 	img {
 		width: 24px;
@@ -65,17 +121,22 @@ font-size: 14px;
 		margin-right: 16px;
 		vertical-align: top;
 	}
+}
 
-// 	&::before {
-// 		content: "";
-// 		background: url(../img/mail-icon.png) no-repeat;
-// 		display: block;
-// 		background-size: contain;
-// 		width: 24px;
-// 		height: 24px;
-// 		position: absolute;
-// 		left: 0;
-// 		top: -20px;
-// }
 
+/*アコーディオン全体*/
+.accordion-area{
+	list-style: none;
+	width: 96%;
+	max-width: 900px;
+	margin:0 auto;
+}
+
+.accordion-area li{
+	margin: 10px 0;
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+	display: none;/*はじめは非表示*/
 }

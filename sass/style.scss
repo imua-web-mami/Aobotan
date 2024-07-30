@@ -1,7 +1,14 @@
+@use "../sass/foundation/reset";
 @use "../sass/global/forward";
+@use "../sass/component/inner";
+@use "../sass/component/br";
+@use "../sass/component/section-title";
+@use "../sass/component/btn";
+@use "../sass/foundation/base";
 @use "../sass/layout/header";
 @use "../sass/layout/footer";
 @use "../sass/page/main-visual";
-@use "../sass/component/inner";
-@use "../sass/component/br";
-@use "../sass/foundation/base";
+@use "../sass/page/about";
+@use "../sass/page/service";
+@use "../sass/page/news";
+@use "../sass/page/contact";

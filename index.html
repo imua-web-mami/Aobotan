@@ -17,7 +17,7 @@
 	<meta property="og:image" content=" サムネイル画像のURL" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@Mami137847" />
-	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="img/favicon-aobotan 1.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,23 +29,33 @@
 
 <body class="type-column">
 	<header class="header left-side">
-		<h1 class="header__logo"><img src="img/logo-pc.svg" alt="青牡丹工務店"></h1>
+		<h1 class="header__logo"><a href="index.html"><img src="img/logo-pc.svg" alt="青牡丹工務店"></a></h1>
+
 		<nav class="header__nav">
-			<ul class="header__nav-list">
-				<li class="header__nav-item"><a href="">私達について</a></li>
-				<ul class="header__about-list">
-					<li class="header__about-item"><a href="#">経営理念</a></li>
-					<li class="header__about-item"><a href="#">会社概要</a></li>
-					<li class="header__about-item"><a href="#">安全への取り組み</a></li>
-				</ul>
-				<li class="header__nav-item"><a href="">事業内容</a></li>
-				<ul class="header__service-list">
-					<li class="header__service-item"><a href="#">住宅建築・リフォーム</a></li>
-					<li class="header__service-item"><a href="#">法人新築・リフォーム</a></li>
-					<li class="header__service-item"><a href="#">公共工事</a></li>
-				</ul>
+			<ul class="accordion-area">
+				<li class="header__nav-item">
+					<details>
+						<summary class="title"><a href="#abot">私達について</a></summary>
+						<div class="box">
+							<p class="header__about-item"><a href="#">経営理念</a></p>
+							<p class="header__about-item"><a href="#">会社概要</a></p>
+							<p class="header__about-item"><a href="#">安全への取り組み</a></p>
+						</div>
+					</details>
+				</li>
+				<li class="header__nav-item">
+					<details>
+						<summary class="title"><a href="#abot">事業内容</a></summary>
+						<div class="box">
+							<p class="header__about-item"><a href="#">住宅建築・リフォーム</a></p>
+							<p class="header__about-item"><a href="#">法人新築・リフォーム</a></p>
+							<p class="header__about-item"><a href="#">公共工事</a></p>
+						</div>
+					</details>
+				</li>
 				<li class="header__nav-item"><a href="">お知らせ</a></li>
-				<li class="header__nav-item header__nav-contact"><a href=""><img src="img/mail-icon.png" alt="メール">お問い合わせ</a></li>
+				<li class="header__nav-item header__nav-contact"><a href=""><img src="img/mail-icon.png" alt="メール">お問い合わせ</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -74,25 +84,94 @@
 					<p class="main-visual__text">
 						住宅購入は一生に一度あるかないかの、大きな買い物です。<br>
 						青牡丹工務店は、最高の家造りを行うスペシャリスト集団です。</p>
+					<p class="scrolldown">scroll down</p>
 				</div>
 			</section>
-	
+			<section class="about" id="about">
+				<div class="about__slider-contents">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="img/slide01.jpg" alt=""></div>
+							<div class="swiper-slide"><img src="img/slide02.jpg" alt=""></div>
+							<div class="swiper-slide"><img src="img/slide03.jpg" alt=""></div>
+						</div>
+					</div>
+				</div>
+				<div class="inner">
+					<h2 class="section-title title-about">
+						私達について
+					</h2>
+					<div class="about__catch-box">
+						<h3 class="about__catch">
+							<span>丁寧な家造り</span>で<br>
+							理想を現実に
+						</h3>
+					</div>
+					<p class="about__text">
+						「丁寧な家造りで、理想を現実に」。これは私たちの約束です。青牡丹工務店が手がける家は、ただの建物ではありません。それは、お客様の暮らしや夢を支える、信頼と品質に満ちた温かな空間です。
+					</p>
+					<div class="btn-more">
+						<a href="#">Read More</a>
+					</div>
+				</div>
+			</section>
+			<section class="service" id="service">
+				<div class="inner">
+					<h2 class="section-title title-service">
+						事業内容
+					</h2>
+				</div>
+			</section>
+			<section class="news" id="news">
+				<div class="inner">
+					<h2 class="section-title title-news">
+						お知らせ
+					</h2>
+				</div>
+			</section>
+			<section class="contact" id="contact">
+				<div class="inner">
+					<h2 class="section-title title-contact">
+						お問い合わせ
+					</h2>
+					<div class="contact__contents">
+						<p class="contact__tel">
+							Tel
+						</p>
+						<div class="contact__contents-center">
+							<p class="contact__tel-number">
+								0000-000-0000
+							</p>
+							<p class="contact__b-hours">
+								営業時間<time>10:00</time>-<time>20:00</time>
+							</p>
+						</div>
+						<div class="btn-more contact__btn">
+							<a href="#"><img src="img/mail-icon.png" alt="">メールフォームはこちら</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
 		</main>
-	
+
 		<footer class="footer">
 			<div class="footer__left-side">
 				<figure class="footer__logo">
 					<img src="img/logo-pc.png" alt="青牡丹工務店">
 				</figure>
 				<address>
-					<p class="footer__address">
-						〒000-0000 <br class="sp-br">大阪府大阪市中央区北区南町5-6-7
-					</p>
+					<p class="footer__address">〒000-0000</p>
+					<p class="footer__address">大阪府大阪市中央区北区南町5-6-7</p>
 					<dl class="address-list">
-						<dt class="address-term">営業時間</dt>
-						<dd class="address-desc"><time datetime="10:00">10:00</time>~<time datetime="20:00">20:00</time></dd>
-						<dt class="address-term">定休日</dt>
-						<dd class="address-desc">日曜日、祝日、年末年始（12月31日から1月3日まで）</dd>
+						<div class="address-box">
+							<dt class="address-term">営業時間</dt>
+							<dd class="address-desc"><time datetime="10:00">10:00</time>~<time datetime="20:00">20:00</time></dd>
+						</div>
+						<div class="address-box">
+							<dt class="address-term">定休日</dt>
+							<dd class="address-desc">日曜日、祝日、年末年始（12月31日から1月3日まで）</dd>
+						</div>
 					</dl>
 				</address>
 			</div>
@@ -136,6 +215,10 @@
 			<small class="footer__small">&copy; AOBOTAN INC.</small>
 		</footer>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>

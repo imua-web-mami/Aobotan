@@ -1,0 +1,26 @@
+@use "../global/forward" as*;
+
+.section-title {
+	color: $text-color;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+	position: relative;
+
+	&::after {
+		content: "";
+		color: $white;
+		font-family: "Kanit", sans-serif;
+		font-size: 124px;
+		font-weight: bold;
+		-webkit-text-stroke: 1px $main-color;
+		text-shadow:
+			1px 1px 0 $main-color,
+			-1px -1px 0 $main-color,
+			-1px -1px 0 $main-color,
+			1px 1px 0 $main-color;
+			position: absolute;
+			top: 44px;
+			left: 0;
+	}
+}

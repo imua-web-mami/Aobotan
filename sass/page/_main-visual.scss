@@ -85,3 +85,42 @@
 	right: calc(189 / 1120 * 100%);
 	bottom: calc(63 / 873 * 100%);
 }
+
+.scrolldown {
+	color: $main-color;
+	font-size: 10px;
+	font-weight: bold;
+  position:absolute;
+  bottom:64px;
+  left:18px;
+		
+		&::after {
+			content: "";
+			width: 1px;
+			height: 112px;
+			background: $main-color;
+			position: absolute;
+			left: 50%;
+			bottom: -120px;
+			animation: scrollAnimation 2.4s ease-out infinite;
+	}
+}
+
+@keyframes scrollAnimation {
+  0% {
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+  50% {
+		transform: scaleY(1);
+		transform-origin: top;
+	}
+	50.1% {
+		transform: scaleY(1);
+		transform-origin: bottom;
+	}
+  100% {
+		transform: scaleY(0);
+		transform-origin: bottom;
+	}
+}

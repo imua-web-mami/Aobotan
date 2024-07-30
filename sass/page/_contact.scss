@@ -1,0 +1,88 @@
+@use "../global/forward" as*;
+
+.contact {
+	background: $bg-color;
+	border-radius: 50px 0px 0px 50px;
+	margin-top: 132px;
+	padding: 32px 0 53px 24px;
+	line-height: 1;
+	position: relative;
+
+	&::after {
+		content: "";
+		background: url(../img/contact.png);
+		background-size: contain;
+		width: 175px;
+		height: 256px;
+		position: absolute;
+		top: 31px;
+		right: 40px;
+	}
+}
+
+.title-contact {
+
+	&::after {
+		content: "CONTACT";
+		color: $bg-color;
+	}
+}
+
+.contact__contents {
+	margin-top: 187px;
+	height: 68px;
+	display: flex;
+	flex-direction: row;
+}
+
+.contact__tel {
+	padding: 8px 32px 0 0;
+	font-family: "Kanit", sans-serif;
+	font-size: 32px;
+	position: relative;
+	border-right: 1px solid $text-color;
+
+	&::after {
+		content: "お電話";
+		font-size: 12px;
+		font-weight: bold;
+		position: absolute;
+		top: 50px;
+		left: 0;
+	}
+}
+
+.contact__contents-center {
+	padding: 8px 32px 0 32px;
+	border-right: 1px solid $text-color;
+}
+
+.contact__tel-number {
+	font-family: "Kanit", sans-serif;
+	font-size: 32px;
+}
+
+.contact__b-hours {
+	margin-top: 8px;
+}
+
+.contact__btn {
+	margin: 6px 0 0 64px;
+	width: 284px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	img {
+		width: 20px;
+		height: 20px;
+		object-fit: contain;
+		margin-right: 8px;
+	}
+}

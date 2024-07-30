@@ -2,11 +2,12 @@
 
 .footer {
 	width: 100%;
-	padding: 33px 10% 47px 0;
+	padding: 33px 0 47px 0;
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	gap: 109px;
+	line-height: 1;
 }
 
 .footer__logo {
@@ -21,19 +22,19 @@
 }
 
 .footer__address {
-
+	display: inline-block;
+	margin-top: 39px;
+	margin-right: 16px;
 }
 
-.address-list {
-
-}
-
-.address-term {
-
+.address-box {
+	display: flex;
+	flex-direction: row;
+	margin-top: 16px;
 }
 
 .address-desc {
-
+	margin-left: 16px;
 }
 
 .footer__nav {
@@ -41,18 +42,18 @@
 	padding-top: 25px;
 }
 
-.footer__nav-list {
-
-}
-
 .footer__nav-item {
 	display: inline-block;
-	line-height: 1;
 	margin-bottom: 40px;
 
 	a {
 		font-weight: bold;
 		color: $text-color;
+		transition: .3s;
+
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 }
 

@@ -1,0 +1,84 @@
+@use "../global/forward" as*;
+
+.about {
+	margin-top: 76px;
+	position: relative;
+
+	.btn-more {
+		margin-top: 40px;
+	}
+}
+
+.about__slider-contents {
+	background: $bg-color;
+	height: 486px;
+	display: flex;
+	align-items: center;
+}
+
+.swiper-slide {
+	width: 360px;
+	height: 360px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+.title-about {
+	margin-top: 71px;
+
+	&::after {
+		content: "ABOUT";
+	}
+}
+
+.about__catch-box {
+	background: $bg-color;
+	width: 172px;
+	height: 452px;
+	position: absolute;
+	top: 254px;
+	right: 182px;
+	z-index: 20;
+	display: flex;
+	justify-content: center;
+
+	&::before {
+		content: "";
+		width: 161px;
+		height: 213px;
+		background: url(../img/about.png) no-repeat;
+		background-size: contain;
+		position: absolute;
+		top: 198px;
+		left: -181px;
+	}
+}
+
+.about__catch {
+	height: 100%;
+	padding-top: 16px;
+	writing-mode: vertical-rl;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 1.5;
+	letter-spacing: 0.5em;
+
+	span {
+		color: $main-color;
+	}
+}
+
+.about__catch::after {
+	content: '';
+	display: block;
+	margin: 20px 0;
+}
+
+.about__text {
+	width: 429px;
+	margin-top: 181px;
+}

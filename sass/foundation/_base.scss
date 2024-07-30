@@ -7,15 +7,11 @@ body {
 	font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
-.type-column {
-	display: flex;
-	flex-direction: row;
-}
-
 .left-side {
-	width: 19.5%;
+	padding-left: 40px;
 }
 
 .right-side {
-	width: 80.5%;
+	width: calc(100% - 19.5% );
+	margin-left: 19.5%;
 }

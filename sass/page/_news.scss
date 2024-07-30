@@ -1,0 +1,12 @@
+@use "../global/forward" as*;
+
+.news {
+	height: 800px;
+}
+
+.title-news {
+
+	&::after {
+		content: "NEWS";
+	}
+}

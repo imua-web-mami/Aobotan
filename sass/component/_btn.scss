@@ -1,0 +1,46 @@
+@use "../global/forward" as*;
+
+.btn-more {
+	width: 240px;
+	height: 60px;
+	border: 1px solid $text-color;
+	border-radius: 10px;
+	font-weight: bold;
+	position: relative;
+	transition: .3s;
+	
+	a {
+		color: $text-color;
+		width: inherit;
+		height: inherit;
+		display: grid;
+		place-content: center;
+	}
+
+	&::after {
+		content: "";
+		width: 10px;
+		height: 10px;
+		background: $text-color;
+		border-radius: 50%;
+		position: absolute;
+		top: 25px;
+		right: 25px;
+	}
+
+	&:hover {
+		background: $text-color;
+
+		a {
+			color: $white;
+		}
+
+		&::after {
+			width: 14px;
+			height: 14px;
+			background: $white;
+			top: 23px;
+			right: 23px;
+		}
+	}
+}
