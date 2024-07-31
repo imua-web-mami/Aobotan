@@ -45,3 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 	});
 });
+
+
+// service 画像疑似要素
+
+document.addEventListener("DOMContentLoaded", function() {
+	const serviceItems = document.querySelectorAll(".service__img-box");
+	serviceItems.forEach((item, index) => {
+			item.setAttribute("data-number", ("0" + (index + 1)).slice(-2));
+	});
+});
