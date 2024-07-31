@@ -587,6 +587,16 @@ summary {
   height: auto;
   position: relative;
 }
+.service::before {
+  content: "";
+  background: url(../img/service-img.png) no-repeat;
+  background-size: contain;
+  width: 124px;
+  aspect-ratio: 124/172;
+  position: absolute;
+  top: 93px;
+  left: 858px;
+}
 .service::after {
   content: "";
   background: #F8F8F8;
@@ -674,11 +684,63 @@ summary {
 }
 
 .news {
-  height: 800px;
+  margin-top: 107px;
+  line-height: 1;
 }
 
 .title-news::after {
   content: "NEWS";
+}
+
+.news__article {
+  margin-top: 196px;
+}
+
+.news__item {
+  border-top: 1px solid #B1C6DC;
+  border-bottom: 1px solid #B1C6DC;
+}
+
+.news__link {
+  display: block;
+  padding: 32px 0;
+  transition: 0.3s;
+  position: relative;
+}
+.news__link:hover {
+  opacity: 0.7;
+}
+.news__link::after {
+  content: "";
+  background: url(../img/arrow-icon-right.png) no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 27px;
+}
+
+.news__tag {
+  padding: 5px 16px;
+  border: 1px solid #4282B8;
+  color: #4282B8;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.news__time {
+  margin-left: 16px;
+  color: #4282B8;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.news__title {
+  margin-top: 24px;
+  color: #000000;
+  font-weight: bold;
 }
 
 .contact {

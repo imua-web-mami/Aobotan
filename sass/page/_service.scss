@@ -5,6 +5,17 @@
 	height: auto;
 	position: relative;
 
+	&::before {
+		content: "";
+		background: url(../img/service-img.png) no-repeat;
+		background-size: contain;
+		width: 124px;
+		aspect-ratio: 124 / 172;
+		position: absolute;
+		top: 93px;
+		left: 858px;
+	}
+
 	&::after {
 		content: "";
 		background: $bg-color;
