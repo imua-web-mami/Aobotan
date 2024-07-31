@@ -55,3 +55,23 @@ document.addEventListener("DOMContentLoaded", function() {
 			item.setAttribute("data-number", ("0" + (index + 1)).slice(-2));
 	});
 });
+
+
+// News モーダル
+
+MicroModal.init({
+  openClass: 'is-open',
+  disableScroll: true,
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+	MicroModal.init({
+			onShow: modal => {
+					// モーダルが表示されたときにスクロール位置をリセット
+					const modalContent = modal.querySelector('.modal__content');
+					if (modalContent) {
+							modalContent.scrollTop = 0;
+					}
+			}
+	});
+});

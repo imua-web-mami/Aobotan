@@ -16,10 +16,6 @@
 	margin-top: 196px;
 }
 
-.news__list {
-
-}
-
 .news__item {
 	border-top: 1px solid $accent-color;
 	border-bottom: 1px solid $accent-color;
@@ -27,7 +23,9 @@
 
 .news__link {
 	display: block;
+	width: 100%;
 	padding: 32px 0;
+	text-align: left;
 	transition: .3s;
 	position: relative;
 
@@ -49,6 +47,7 @@
 }
 
 .news__tag {
+	display: inline-block;
 	padding: 5px 16px;
 	border: 1px solid $main-color;
 	color: $main-color;
@@ -64,8 +63,88 @@
 }
 
 .news__title {
-	margin-top: 24px;
+	margin-top: 29px;
 	color: $text-color;
 	font-weight: bold;
 }
 
+.modal-inner {
+	width: 656px;
+	margin-inline: auto;
+}
+
+.modal-title {
+	margin-top: 21px;
+	font-size: 24px;
+	line-height: 1.8;
+}
+
+.news__modal-img {
+	margin-top: 16px;
+}
+
+.news__modal-text {
+	line-height: 1.8;
+}
+
+.news__modal-text + .news__modal-text {
+	margin-top: 2rem;
+}
+
+#modal-0 {
+  display: none;
+}
+#modal-0.is-open {
+  display: block;
+}
+#modal-1 {
+  display: none;
+}
+#modal-1.is-open {
+  display: block;
+}
+#modal-2 {
+  display: none;
+}
+#modal-2.is-open {
+  display: block;
+}
+#modal-3 {
+  display: none;
+}
+#modal-3.is-open {
+  display: block;
+}
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	overflow-y: auto;
+}
+.modal__container {
+	width: 860px;
+	max-height: 95%;
+  background-color: #fff;
+  padding: 16px 0;
+	overflow-y: auto;
+}
+
+.modal__close {
+	margin-top: 61px;
+	text-align: center;
+
+	&:hover {
+		color: $white;
+	}
+}
+
+.modal-btn-box {
+	text-align: center;
+}
