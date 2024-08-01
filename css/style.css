@@ -179,17 +179,14 @@ body {
   font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
-.left-side {
-  padding-left: 40px;
-}
-
-.right-side {
+.main {
   width: 80.5%;
   margin-left: 19.5%;
 }
 
 .header {
   padding-top: 74px;
+  padding-left: 40px;
   line-height: 1;
   position: fixed;
   left: 0;
@@ -224,6 +221,7 @@ body {
 .header__nav-item {
   width: inherit;
   border-bottom: 1px solid #B1C6DC;
+  position: relative;
 }
 .header__nav-item a {
   padding: 32px 0;
@@ -236,8 +234,11 @@ body {
   opacity: 0.7;
 }
 
+.header__nav-link {
+  width: calc(100% - 24px);
+}
+
 .title {
-  position: relative;
   transition: all 0.5s ease;
 }
 
@@ -246,8 +247,19 @@ summary {
   cursor: pointer; /* カーソルをポインターにする */
 }
 
-.title::before,
-.title::after {
+.headerOpen {
+  display: inline-block;
+  background-color: pink;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.headerOpen::before,
+.headerOpen::after {
   position: absolute;
   content: "";
   width: 24px;
@@ -255,20 +267,20 @@ summary {
   background-color: #4282B8;
 }
 
-.title::before {
-  bottom: 42px;
+.headerOpen::before {
+  top: 50%;
   right: 0;
   transform: rotate(0deg);
 }
 
-.title::after {
-  bottom: 42px;
+.headerOpen::after {
+  top: 50%;
   right: 0;
   transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.title.close::after {
+.headerOpen.close::after {
   display: none;
 }
 
@@ -321,7 +333,8 @@ summary {
 }
 
 .footer {
-  width: 100%;
+  width: 80.5%;
+  margin-left: 19.5%;
   padding: 33px 0 47px 0;
   position: relative;
   display: flex;
@@ -694,6 +707,10 @@ summary {
   margin-top: 28px;
 }
 
+.text-top {
+  margin-top: 35px;
+}
+
 .news {
   margin-top: 107px;
   line-height: 1;
@@ -768,8 +785,15 @@ summary {
   line-height: 1.8;
 }
 
-.news__modal-img {
+.news__img-box {
   margin-top: 16px;
+}
+
+.news__modal-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .news__modal-text {

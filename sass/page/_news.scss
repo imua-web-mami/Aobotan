@@ -1,5 +1,9 @@
 @use "../global/forward" as*;
 
+.text-top {
+	margin-top: 35px;
+}
+
 .news {
 	margin-top: 107px;
 	line-height: 1;
@@ -79,8 +83,14 @@
 	line-height: 1.8;
 }
 
-.news__modal-img {
+.news__img-box {
 	margin-top: 16px;
+}
+
+.news__modal-img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .news__modal-text {

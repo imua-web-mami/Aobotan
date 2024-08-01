@@ -2,6 +2,7 @@
 
 .header {
 	padding-top: 74px;
+	padding-left: 40px;
 	line-height: 1;
 	position: fixed;
 	left: 0;
@@ -38,6 +39,7 @@
 .header__nav-item {
 	width: inherit;
 	border-bottom: 1px solid $accent-color;
+	position: relative;
 
 	a {
 		padding: 32px 0;
@@ -52,8 +54,12 @@
 	}
 }
 
+.header__nav-link {
+	width: calc(100% - 24px);
+}
+
 .title {
-	position: relative;
+
 	transition: all .5s ease;
 }
 
@@ -62,8 +68,19 @@ summary {
 	cursor: pointer;  /* カーソルをポインターにする */
 }
 
-.title::before,
-.title::after {
+.headerOpen {
+	display: inline-block;
+	background-color: pink;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+.headerOpen::before,
+.headerOpen::after {
 	position: absolute;
 	content: '';
 	width: 24px;
@@ -72,20 +89,20 @@ summary {
 
 }
 
-.title::before {
-	bottom: 42px;
+.headerOpen::before {
+	top: 50%;
 	right: 0;
 	transform: rotate(0deg);
 }
 
-.title::after {
-	bottom: 42px;
+.headerOpen::after {
+	top: 50%;
 	right: 0;
 	transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.title.close::after {
+.headerOpen.close::after {
 	display: none;
 }
 

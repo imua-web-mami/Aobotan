@@ -1,7 +1,8 @@
 @use "../global/forward" as*;
 
 .footer {
-	width: 100%;
+	width: calc(100% - 19.5% );
+	margin-left: 19.5%;
 	padding: 33px 0 47px 0;
 	position: relative;
 	display: flex;
