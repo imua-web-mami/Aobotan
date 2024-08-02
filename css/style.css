@@ -247,7 +247,7 @@ summary {
   cursor: pointer; /* カーソルをポインターにする */
 }
 
-.headerOpen {
+.title {
   display: inline-block;
   background-color: pink;
   width: 24px;
@@ -258,8 +258,8 @@ summary {
   transform: translateY(-50%);
 }
 
-.headerOpen::before,
-.headerOpen::after {
+.title::before,
+.title::after {
   position: absolute;
   content: "";
   width: 24px;
@@ -267,20 +267,20 @@ summary {
   background-color: #4282B8;
 }
 
-.headerOpen::before {
+.title::before {
   top: 50%;
   right: 0;
   transform: rotate(0deg);
 }
 
-.headerOpen::after {
+.title::after {
   top: 50%;
   right: 0;
   transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.headerOpen.close::after {
+.title.close::after {
   display: none;
 }
 
