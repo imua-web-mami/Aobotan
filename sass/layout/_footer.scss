@@ -4,16 +4,35 @@
 	width: calc(100% - 19.5% );
 	margin-left: 19.5%;
 	padding: 33px 0 47px 0;
+	line-height: 1;
 	position: relative;
+
+	@include mq(lg) {
+		width: 100%;
+		margin-left: 0;
+		padding: 24px 0;
+		text-align: center;
+	}
+}
+
+.footer__inner {
 	display: flex;
 	flex-direction: row;
 	gap: 109px;
-	line-height: 1;
+
+	@include mq(lg) {
+		flex-direction: column;
+		gap: 0;
+	}
 }
 
 .footer__logo {
 	width: 222px;
 	height: 133px;
+
+	@include mq(lg) {
+		margin-inline: auto;
+	}
 
 	img {
 		width: 100%;
@@ -26,12 +45,38 @@
 	display: inline-block;
 	margin-top: 39px;
 	margin-right: 16px;
+
+	@include mq(lg) {
+		display: block;
+		margin-top: 0;
+		margin-right: 0;
+		font-size: 12px;
+	}
+}
+
+.footer__address:nth-child(1) {
+	@include mq(lg) {
+		margin-top: 36px;
+	}
+}
+
+.footer__address:nth-child(2) {
+	@include mq(lg) {
+		margin-top: 20px;
+	}
 }
 
 .address-box {
 	display: flex;
 	flex-direction: row;
 	margin-top: 16px;
+
+	@include mq(lg) {
+		margin-top: 20px;
+		margin-inline: auto;
+		justify-content: center;
+		font-size: 12px;
+	}
 }
 
 .address-desc {
@@ -41,11 +86,22 @@
 .footer__nav {
 	width: 528px;
 	padding-top: 25px;
+
+	@include mq(lg) {
+		width: 100%;
+		padding-top: 0;
+		margin-top: 66px;
+	}
 }
 
 .footer__nav-item {
 	display: inline-block;
 	margin-bottom: 40px;
+
+	@include mq(lg) {
+		display: block;
+		margin-bottom: 32px;
+	}
 
 	a {
 		font-weight: bold;
@@ -60,6 +116,10 @@
 
 .footer__nav-item:not(:last-child) {
 	margin-right: 24px;
+
+	@include mq(lg) {
+		margin-right: 0;
+	}
 }
 
 .footer__nav-contact {
@@ -77,5 +137,11 @@
 	bottom: 26px;
 	font-size: 14px;
 	line-height: 1;
+
+	@include mq(lg) {
+		font-size: 12px;
+		position: inherit;
+		margin-top: 26px;
+	}
 }
 

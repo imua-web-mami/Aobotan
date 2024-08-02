@@ -4,8 +4,9 @@
 	margin-top: 76px;
 	position: relative;
 
-	.btn-more {
-		margin-top: 40px;
+	@include mq(lg) {
+		margin-top: 73px;
+
 	}
 }
 
@@ -14,11 +15,20 @@
 	height: 486px;
 	display: flex;
 	align-items: center;
+
+	@include mq(lg) {
+		height: 274px;
+	}
 }
 
 .swiper-slide {
 	width: 360px;
 	height: 360px;
+
+	@include mq(lg) {
+		width: 200px;
+		height: 200px;
+	}
 
 	img {
 		width: 100%;
@@ -27,8 +37,12 @@
 	}
 }
 
-.title-about {
+.about__title {
 	margin-top: 71px;
+
+	@include mq(lg) {
+		margin-top: 126px;
+	}
 
 	&::after {
 		content: "ABOUT";
@@ -46,6 +60,13 @@
 	display: flex;
 	justify-content: center;
 
+	@include mq(lg) {
+		width: 112px;
+		height: 284px;
+		top: 116px;
+		right: 27px;
+	}
+
 	&::before {
 		content: "";
 		width: 161px;
@@ -55,6 +76,13 @@
 		position: absolute;
 		top: 198px;
 		left: -181px;
+
+		@include mq(lg) {
+			width: 60px;
+			height: 80px;
+			top: 142px;
+			left: -69px;
+		}
 	}
 }
 
@@ -67,18 +95,30 @@
 	line-height: 1.5;
 	letter-spacing: 0.5em;
 
+	@include mq(lg) {
+		font-size: 24px;
+	}
+
 	span {
 		color: $main-color;
 	}
 }
 
-.about__catch::after {
-	content: '';
-	display: block;
-	margin: 20px 0;
-}
-
 .about__text {
 	width: 429px;
 	margin-top: 181px;
+
+	@include mq(lg) {
+		width: 100%;
+		font-size: 14px;
+		margin-top: 128px;
+	}
+}
+
+.about-btn {
+	margin-top: 40px;
+
+	@include mq(lg) {
+		margin-top: 32px;
+	}
 }

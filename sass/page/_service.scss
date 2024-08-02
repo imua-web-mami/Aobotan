@@ -4,6 +4,12 @@
 	margin-top: 85px;
 	height: auto;
 	position: relative;
+	padding: 49px 0 100px 0;
+
+	@include mq(lg) {
+		margin-top: 52px;
+		padding: 26px 0 91px 0;
+	}
 
 	&::before {
 		content: "";
@@ -14,6 +20,14 @@
 		position: absolute;
 		top: 93px;
 		left: 858px;
+
+		@include mq(lg) {
+			width: 69px;
+			aspect-ratio: 69 / 96;
+			top: -48px;
+			left: auto;
+			right: 20px;
+		}
 	}
 
 	&::after {
@@ -26,33 +40,45 @@
 		top: 0;
 		left: calc(192 / 1160 * 100%);
 		z-index: -20;
+
+		@include mq(lg) {
+			width: calc(100% - (100 / 375 * 100%));
+			left: calc(100 / 375 * 100%);
+		}
 	}
 }
 
-.service__inner {
-	padding: 49px 0 100px 0;
-}
-
-.title-service {
+.service__title {
 
 	&::after {
-		padding-top: 49px;
 		content: "SERVICE";
 	}
 }
 
 .service__list {
-	margin-top: 120px;
+	margin-top: 212px;
+
+	@include mq(lg) {
+		margin-top: 112px;
+	}
 }
 
 .service__item {
-	padding-top: 92px;
 	display: flex;
 	flex-direction: row;
 	gap: 56px;
 
+	@include mq(lg) {
+		flex-direction: column;
+		gap: 34px;
+	}
+
 	&:nth-child(even) {
 		flex-direction: row-reverse;
+
+		@include mq(lg) {
+			flex-direction: column;
+		}
 	}
 	&:nth-child(even) .service__img-box::after {
 		left: -179px;
@@ -62,10 +88,23 @@
 	}
 }
 
+.service__item + .service__item {
+	margin-top: 92px;
+
+	@include mq(lg) {
+		margin-top: 50px;
+	}
+}
+
 .service__img-box {
 	width: 46%;
 	aspect-ratio: 516 / 464;
 	position: relative;
+
+	@include mq(lg) {
+		width: 100%;
+		aspect-ratio: 335 / 301;
+	}
 
 	&::after {
 	content:  attr(data-number);
@@ -78,6 +117,12 @@
 	top: 0;
 	right: -153px;
 	z-index: -10;
+
+	@include mq(lg) {
+		font-size: 48px;
+		bottom: -22px;
+		right: 0;
+	}
 	}
 
 	img {
@@ -88,9 +133,13 @@
 
 .service__contents {
 	width: 38%;
+
+	@include mq(lg) {
+		width: 100%;
+	}
 }
 
-.service__title {
+.service__sub-title {
 	display: inline-block	;
 	margin-top: 168px;
 	padding: 10px 16px;
@@ -99,10 +148,18 @@
 	font-size: 24px;
 	font-weight: bold;
 	line-height: 1;
+
+	@include mq(lg) {
+		margin-top: 34px;
+	}
 }
 
 .service__text {
 	margin-top: 48px;
+
+	@include mq(lg) {
+		margin-top: 26px;
+	}
 }
 
 .service__btn {

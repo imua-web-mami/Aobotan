@@ -7,6 +7,10 @@
 	line-height: 1;
 	position: relative;
 
+	@include mq(lg) {
+		font-size: 20px;
+	}
+
 	&::after {
 		content: "";
 		color: $white;
@@ -14,13 +18,13 @@
 		font-size: 124px;
 		font-weight: bold;
 		-webkit-text-stroke: 1px $main-color;
-		text-shadow:
-			1px 1px 0 $main-color,
-			-1px -1px 0 $main-color,
-			-1px -1px 0 $main-color,
-			1px 1px 0 $main-color;
-			position: absolute;
-			top: 44px;
-			left: 0;
+		position: absolute;
+		top: 44px;
+		left: 0;
+
+		@include mq(lg) {
+			font-size: 72px;
+			top: 36px;
+		}
 	}
 }
