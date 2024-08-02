@@ -8,6 +8,13 @@
 	margin-top: 40px;
 	position: relative;
 
+	@include mq(lg) {
+		width: calc(100% - 10px);
+		aspect-ratio: 365 / 589;
+		border-radius: 10px 0px 0px 10px;
+		margin: 102px 0 0 10px;
+	}
+
 	&::before {
 		content: "";
 		display: block;
@@ -18,6 +25,10 @@
 		top: -40px;
 		right: -40px;
 		z-index: -10;
+
+		@include mq(lg) {
+			display: none;
+		}
 	}
 }
 
@@ -35,6 +46,13 @@
 	aspect-ratio: 195 / 222;
 	top: calc(65 / 873 * 100%);
 	left: calc(71 / 1120 * 100%);
+
+	@include mq(lg) {
+		width: calc(103 / 365 * 100%);
+		aspect-ratio: 103 / 118;
+		top: calc(10 / 589 * 100%);
+		left: calc(16 / 365 * 100%);
+	}
 }
 
 .main-visual__img:nth-child(2) {
@@ -42,6 +60,13 @@
 	aspect-ratio: 256 / 252;
 	top: calc(64 / 873 * 100%);
 	right: calc(55 / 1120 * 100%);
+
+	@include mq(lg) {
+		width: calc(134 / 365 * 100%);
+		aspect-ratio: 134 / 131;
+		top: calc(31 / 589 * 100%);
+		right: calc(12 / 365 * 100%);
+	}
 }
 
 .main-visual__img:nth-child(3) {
@@ -49,6 +74,13 @@
 	aspect-ratio: 314 / 416;
 	left: calc(87 / 1120 * 100%);
 	bottom: calc(51 / 873 * 100%);
+
+	@include mq(lg) {
+		width: calc(110 / 365 * 100%);
+		aspect-ratio: 110 / 147;
+		left: calc(18 / 365 * 100%);
+		bottom: calc(211 / 589 * 100%);
+	}
 }
 
 .main-visual__img:nth-child(4) {
@@ -56,6 +88,13 @@
 	aspect-ratio: 206 / 235;
 	top: calc(319 / 873 * 100%);
 	left: calc(457 / 1120 * 100%);
+
+	@include mq(lg) {
+		width: calc(82 / 365 * 100%);
+		aspect-ratio: 82 / 94;
+		top: calc(235 / 589 * 100%);
+		left: calc(142 / 365 * 100%);
+	}
 }
 
 .main-visual__img:nth-child(5) {
@@ -63,6 +102,13 @@
 	aspect-ratio: 162 / 187;
 	right: calc(56 / 1120 * 100%);
 	bottom: calc(296 / 873 * 100%);
+
+	@include mq(lg) {
+		width: calc(88 / 365 * 100%);
+		aspect-ratio: 88 / 101;
+		right: calc(12 / 365 * 100%);
+		bottom: calc(217 / 589 * 100%);
+	}
 }
 
 .main-visual__catch {
@@ -76,6 +122,14 @@
 	position: absolute;
 	right: calc(113 / 1120 * 100%);
 	bottom: calc(148 / 873 * 100%);
+
+	@include mq(lg) {
+		padding: 14px 13px;
+		font-size: 24px;
+		right: auto;
+		left: calc(9 / 365 * 100%);
+		bottom: calc(129 / 589 * 100%);
+	}
 }
 
 .main-visual__text {
@@ -84,6 +138,13 @@
 	position: absolute;
 	right: calc(189 / 1120 * 100%);
 	bottom: calc(63 / 873 * 100%);
+
+	@include mq(lg) {
+		font-size: 12px;
+		right: auto;
+		left: calc(9 / 365 * 100%);
+		bottom: calc(60 / 589 * 100%);
+	}
 }
 
 .scrolldown {
@@ -93,6 +154,11 @@
   position:absolute;
   bottom:64px;
   left:18px;
+
+	@include mq(lg) {
+		bottom: 35px;
+		left: 9px;
+	}
 		
 		&::after {
 			content: "";
@@ -103,6 +169,11 @@
 			left: 50%;
 			bottom: -120px;
 			animation: scrollAnimation 2.4s ease-out infinite;
+
+			@include mq(lg) {
+				height: 52px;
+				bottom: -60px;
+			}
 	}
 }
 

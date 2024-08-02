@@ -10,4 +10,9 @@ body {
 .main {
 	width: calc(100% - 19.5% );
 	margin-left: 19.5%;
+
+	@include mq(lg) {
+		width: 100%;
+		margin-left: 0;
+	}
 }

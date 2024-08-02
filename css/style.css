@@ -97,7 +97,7 @@ button {
   max-width: 1160px;
   padding-right: 40px;
 }
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 1024px) {
   .inner {
     padding-inline: 20px;
   }
@@ -183,6 +183,12 @@ body {
   width: 80.5%;
   margin-left: 19.5%;
 }
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 
 .header {
   padding-top: 74px;
@@ -191,12 +197,32 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 20;
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 100%;
+    height: 79px;
+    padding: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .header__logo {
   width: 200px;
   height: 121px;
   margin-inline: auto;
+}
+@media screen and (max-width: 1024px) {
+  .header__logo {
+    width: 98px;
+    height: 59px;
+    margin: 0;
+    padding-top: 10px;
+  }
 }
 .header__logo img {
   width: 100%;
@@ -216,6 +242,11 @@ body {
   margin-top: 25px;
   margin-inline: auto;
   font-weight: bold;
+}
+@media screen and (max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
 }
 
 .header__nav-item {
@@ -243,8 +274,10 @@ body {
 }
 
 summary {
-  list-style: none; /* デフォルトのマーカーを非表示にする */
-  cursor: pointer; /* カーソルをポインターにする */
+  list-style: none;
+  /* デフォルトのマーカーを非表示にする */
+  cursor: pointer;
+  /* カーソルをポインターにする */
 }
 
 .title {
@@ -329,7 +362,116 @@ summary {
 
 /*アコーディオンで現れるエリア*/
 .box {
-  display: none; /*はじめは非表示*/
+  display: none;
+  /*はじめは非表示*/
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+.g-nav {
+  pointer-events: none;
+  /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  /*はじめは透過0*/
+  /*ナビの位置と形状*/
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  /*ナビの高さ*/
+  background: #999;
+  /*動き*/
+  transition: all 0.3s;
+}
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+.g-nav.panelactive {
+  opacity: 1;
+  z-index: 999;
+}
+
+/*ナビゲーション*/
+.g-nav ul {
+  display: none;
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.g-nav.panelactive ul {
+  display: block;
+}
+
+/*リストのレイアウト設定*/
+.g-nav li {
+  list-style: none;
+  text-align: center;
+}
+
+.g-nav li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.menu-btn {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+    width: 56px;
+    height: 48px;
+    background: #4282B8;
+    position: relative;
+  }
+}
+
+/*×に変化*/
+.menu-btn span {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: #fff;
+  transition: all 0.4s;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-btn span:nth-of-type(1) {
+  top: 12px;
+}
+
+.menu-btn span:nth-of-type(2) {
+  top: 24px;
+}
+
+.menu-btn span:nth-of-type(3) {
+  top: 36px;
+}
+
+.menu-btn.active span:nth-of-type(1) {
+  top: 18px;
+  transform: translateX(-50%) translateY(6px) rotate(-45deg);
+}
+
+.menu-btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-of-type(3) {
+  top: 30px;
+  transform: translateX(-50%) translateY(-6px) rotate(45deg);
 }
 
 .footer {
@@ -414,6 +556,14 @@ summary {
   margin-top: 40px;
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  .main-visual__contents {
+    width: calc(100% - 10px);
+    aspect-ratio: 365/589;
+    border-radius: 10px 0px 0px 10px;
+    margin: 102px 0 0 10px;
+  }
+}
 .main-visual__contents::before {
   content: "";
   display: block;
@@ -424,6 +574,11 @@ summary {
   top: -40px;
   right: -40px;
   z-index: -10;
+}
+@media screen and (max-width: 1024px) {
+  .main-visual__contents::before {
+    display: none;
+  }
 }
 
 .main-visual__img {
@@ -440,12 +595,28 @@ summary {
   top: 7.4455899198%;
   left: 6.3392857143%;
 }
+@media screen and (max-width: 1024px) {
+  .main-visual__img:nth-child(1) {
+    width: 28.2191780822%;
+    aspect-ratio: 103/118;
+    top: 1.6977928693%;
+    left: 4.3835616438%;
+  }
+}
 
 .main-visual__img:nth-child(2) {
   width: 22.8571428571%;
   aspect-ratio: 256/252;
   top: 7.3310423826%;
   right: 4.9107142857%;
+}
+@media screen and (max-width: 1024px) {
+  .main-visual__img:nth-child(2) {
+    width: 36.7123287671%;
+    aspect-ratio: 134/131;
+    top: 5.2631578947%;
+    right: 3.2876712329%;
+  }
 }
 
 .main-visual__img:nth-child(3) {
@@ -454,6 +625,14 @@ summary {
   left: 7.7678571429%;
   bottom: 5.8419243986%;
 }
+@media screen and (max-width: 1024px) {
+  .main-visual__img:nth-child(3) {
+    width: 30.1369863014%;
+    aspect-ratio: 110/147;
+    left: 4.9315068493%;
+    bottom: 35.8234295416%;
+  }
+}
 
 .main-visual__img:nth-child(4) {
   width: 18.3928571429%;
@@ -461,12 +640,28 @@ summary {
   top: 36.5406643757%;
   left: 40.8035714286%;
 }
+@media screen and (max-width: 1024px) {
+  .main-visual__img:nth-child(4) {
+    width: 22.4657534247%;
+    aspect-ratio: 82/94;
+    top: 39.8981324278%;
+    left: 38.904109589%;
+  }
+}
 
 .main-visual__img:nth-child(5) {
   width: 14.4642857143%;
   aspect-ratio: 162/187;
   right: 5%;
   bottom: 33.9060710195%;
+}
+@media screen and (max-width: 1024px) {
+  .main-visual__img:nth-child(5) {
+    width: 24.1095890411%;
+    aspect-ratio: 88/101;
+    right: 3.2876712329%;
+    bottom: 36.8421052632%;
+  }
 }
 
 .main-visual__catch {
@@ -481,6 +676,15 @@ summary {
   right: 10.0892857143%;
   bottom: 16.9530355097%;
 }
+@media screen and (max-width: 1024px) {
+  .main-visual__catch {
+    padding: 14px 13px;
+    font-size: 24px;
+    right: auto;
+    left: 2.4657534247%;
+    bottom: 21.9015280136%;
+  }
+}
 
 .main-visual__text {
   font-weight: bold;
@@ -488,6 +692,14 @@ summary {
   position: absolute;
   right: 16.875%;
   bottom: 7.2164948454%;
+}
+@media screen and (max-width: 1024px) {
+  .main-visual__text {
+    font-size: 12px;
+    right: auto;
+    left: 2.4657534247%;
+    bottom: 10.1867572156%;
+  }
 }
 
 .scrolldown {
@@ -498,6 +710,12 @@ summary {
   bottom: 64px;
   left: 18px;
 }
+@media screen and (max-width: 1024px) {
+  .scrolldown {
+    bottom: 35px;
+    left: 9px;
+  }
+}
 .scrolldown::after {
   content: "";
   width: 1px;
@@ -507,6 +725,12 @@ summary {
   left: 50%;
   bottom: -120px;
   animation: scrollAnimation 2.4s ease-out infinite;
+}
+@media screen and (max-width: 1024px) {
+  .scrolldown::after {
+    height: 52px;
+    bottom: -60px;
+  }
 }
 
 @keyframes scrollAnimation {

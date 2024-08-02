@@ -7,12 +7,30 @@
 	position: fixed;
 	left: 0;
 	top: 0;
+	z-index: 20;
+
+	@include mq(lg) {
+		width: 100%;
+		height: 79px;
+		padding: 0;
+		background: $white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 }
 
 .header__logo {
 	width: 200px;
 	height: 121px;
 	margin-inline: auto;
+
+	@include mq(lg) {
+		width: 98px;
+		height: 59px;
+		margin: 0;
+		padding-top: 10px;
+	}
 
 	img {
 		width: 100%;
@@ -34,6 +52,10 @@
 	margin-top: 25px;
 	margin-inline: auto;
 	font-weight: bold;
+
+	@include mq(lg) {
+		display: none;
+	}
 }
 
 .header__nav-item {
@@ -65,8 +87,10 @@
 
 
 summary {
-	list-style: none; /* デフォルトのマーカーを非表示にする */
-	cursor: pointer;  /* カーソルをポインターにする */
+	list-style: none;
+	/* デフォルトのマーカーを非表示にする */
+	cursor: pointer;
+	/* カーソルをポインターにする */
 }
 
 .title {
@@ -143,18 +167,129 @@ summary {
 
 
 /*アコーディオン全体*/
-.accordion-area{
+.accordion-area {
 	list-style: none;
 	width: 96%;
 	max-width: 900px;
-	margin:0 auto;
+	margin: 0 auto;
 }
 
-.accordion-area li{
+.accordion-area li {
 	margin: 10px 0;
 }
 
 /*アコーディオンで現れるエリア*/
 .box {
-	display: none;/*はじめは非表示*/
+	display: none;
+	/*はじめは非表示*/
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+.g-nav {
+	pointer-events: none;
+	/*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+	position: fixed;
+	z-index: -1;
+	opacity: 0;
+	/*はじめは透過0*/
+	/*ナビの位置と形状*/
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	/*ナビの高さ*/
+	background: #999;
+	/*動き*/
+	transition: all 0.3s;
+}
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+.g-nav.panelactive {
+	opacity: 1;
+	z-index: 999;
+}
+
+/*ナビゲーション*/
+.g-nav ul {
+	display: none;
+	/*ナビゲーション天地中央揃え*/
+	position: absolute;
+	z-index: 999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.g-nav.panelactive ul {
+	display: block;
+}
+
+/*リストのレイアウト設定*/
+
+.g-nav li {
+	list-style: none;
+	text-align: center;
+}
+
+.g-nav li a {
+	color: #333;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+
+.menu-btn {
+	display: none;
+
+	@include mq(lg) {
+		display: block;
+		cursor: pointer;
+		width: 56px;
+		height: 48px;
+		background: $main-color;
+		position: relative;
+	}
+}
+
+/*×に変化*/
+.menu-btn span {
+	display: inline-block;
+	width: 32px;
+	height: 1px;
+	background-color: $white;
+	transition: all .4s;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.menu-btn span:nth-of-type(1) {
+	top: 12px;
+}
+
+.menu-btn span:nth-of-type(2) {
+	top: 24px;
+}
+
+.menu-btn span:nth-of-type(3) {
+	top: 36px;
+}
+
+.menu-btn.active span:nth-of-type(1) {
+	top: 18px;
+	transform: translateX(-50%) translateY(6px) rotate(-45deg);
+}
+
+.menu-btn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.menu-btn.active span:nth-of-type(3) {
+	top: 30px;
+	transform: translateX(-50%) translateY(-6px) rotate(45deg);
 }
