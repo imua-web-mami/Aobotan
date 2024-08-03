@@ -262,7 +262,6 @@ body {
 .header__nav-item {
   width: inherit;
   border-bottom: 1px solid #B1C6DC;
-  position: relative;
 }
 .header__nav-item a {
   padding: 32px 0;
@@ -277,32 +276,22 @@ body {
 
 .header__nav-link {
   width: calc(100% - 24px);
+  position: relative;
 }
 
-.title {
-  transition: all 0.5s ease;
-}
-
-summary {
-  list-style: none;
-  /* デフォルトのマーカーを非表示にする */
-  cursor: pointer;
-  /* カーソルをポインターにする */
-}
-
-.title {
+.hoverOpen {
   display: inline-block;
-  background-color: pink;
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 50%;
+  top: 42px;
   right: 0;
   transform: translateY(-50%);
+  transition: all 0.5s ease;
 }
 
-.title::before,
-.title::after {
+.hoverOpen::before,
+.hoverOpen::after {
   position: absolute;
   content: "";
   width: 24px;
@@ -310,20 +299,20 @@ summary {
   background-color: #4282B8;
 }
 
-.title::before {
+.hoverOpen::before {
   top: 50%;
   right: 0;
   transform: rotate(0deg);
 }
 
-.title::after {
+.hoverOpen::after {
   top: 50%;
   right: 0;
   transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.title.close::after {
+.hoverOpen.close::after {
   display: none;
 }
 
@@ -383,15 +372,18 @@ summary {
   position: fixed;
   z-index: -1;
   opacity: 0;
-  /*はじめは透過0*/
-  /*ナビの位置と形状*/
-  top: 0;
+  top: 79px;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 79px);
   /*ナビの高さ*/
-  background: #999;
+  background: #fff;
   /*動き*/
   transition: all 0.3s;
+}
+@media screen and (max-width: 1024px) {
+  .g-nav {
+    pointer-events: all;
+  }
 }
 
 /*アクティブクラスがついたら透過なしにして最前面へ*/
@@ -401,34 +393,42 @@ summary {
 }
 
 /*ナビゲーション*/
-.g-nav ul {
+.g-nav-list {
   display: none;
   /*ナビゲーション天地中央揃え*/
   position: absolute;
   z-index: 999;
-  top: 50%;
+  top: 14px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  text-align: center;
 }
 
 .g-nav.panelactive ul {
   display: block;
 }
 
-/*リストのレイアウト設定*/
-.g-nav li {
-  list-style: none;
-  text-align: center;
-}
-
-.g-nav li a {
-  color: #333;
-  text-decoration: none;
-  padding: 10px;
+.g-nav-item a {
+  color: #000000;
   display: block;
-  text-transform: uppercase;
+  padding: 16px 0;
   letter-spacing: 0.1em;
   font-weight: bold;
+  transition: 0.3s;
+}
+.g-nav-item a:hover {
+  opacity: 0.7;
+}
+
+.g-nav-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: text-bottom;
+}
+
+.g-nav-small {
+  margin-top: 10px;
 }
 
 /*========= ボタンのためのCSS ===============*/
@@ -858,6 +858,10 @@ summary {
   }
 }
 
+.swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
 .swiper-slide {
   width: 360px;
   height: 360px;
@@ -894,7 +898,7 @@ summary {
   position: absolute;
   top: 254px;
   right: 182px;
-  z-index: 20;
+  z-index: 10;
   display: flex;
   justify-content: center;
 }
@@ -1048,8 +1052,18 @@ summary {
 .service__item:nth-child(even) .service__img-box::after {
   left: -179px;
 }
+@media screen and (max-width: 1024px) {
+  .service__item:nth-child(even) .service__img-box::after {
+    left: 0;
+  }
+}
 .service__item:nth-child(3) .service__img-box::after {
   right: -181px;
+}
+@media screen and (max-width: 1024px) {
+  .service__item:nth-child(3) .service__img-box::after {
+    right: 0;
+  }
 }
 
 .service__item + .service__item {
@@ -1087,8 +1101,8 @@ summary {
 @media screen and (max-width: 1024px) {
   .service__img-box::after {
     font-size: 48px;
-    bottom: -22px;
-    right: 0;
+    top: 328px;
+    right: 0px;
   }
 }
 .service__img-box img {
@@ -1114,10 +1128,11 @@ summary {
   font-size: 24px;
   font-weight: bold;
   line-height: 1;
+  position: relative;
 }
 @media screen and (max-width: 1024px) {
   .service__sub-title {
-    margin-top: 34px;
+    margin-top: 0;
   }
 }
 

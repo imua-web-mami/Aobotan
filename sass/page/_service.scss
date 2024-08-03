@@ -82,9 +82,17 @@
 	}
 	&:nth-child(even) .service__img-box::after {
 		left: -179px;
+
+		@include mq(lg) {
+			left: 0;
+		}
 	}
 	&:nth-child(3) .service__img-box::after {
 		right: -181px;
+
+		@include mq(lg) {
+			right: 0;
+		}
 	}
 }
 
@@ -120,8 +128,8 @@
 
 	@include mq(lg) {
 		font-size: 48px;
-		bottom: -22px;
-		right: 0;
+		top: 328px;
+		right: 0px;
 	}
 	}
 
@@ -148,9 +156,10 @@
 	font-size: 24px;
 	font-weight: bold;
 	line-height: 1;
+	position: relative;
 
 	@include mq(lg) {
-		margin-top: 34px;
+		margin-top: 0;
 	}
 }
 
