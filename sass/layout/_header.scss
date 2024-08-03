@@ -186,16 +186,13 @@
 	background: $white;
 	/*動き*/
 	transition: all 0.3s;
-
-	@include mq(lg) {
-		pointer-events: all;
-	}
 }
 
 /*アクティブクラスがついたら透過なしにして最前面へ*/
 .g-nav.panelactive {
 	opacity: 1;
 	z-index: 999;
+	pointer-events: all;
 }
 
 /*ナビゲーション*/
