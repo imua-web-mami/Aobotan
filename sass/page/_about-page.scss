@@ -7,6 +7,12 @@
 	margin-top: 40px;
 	position: relative;
 
+	@include mq(lg) {
+		width: calc(100% - 10px);
+		margin: 102px 0 0 10px;
+		border-radius: 10px 0px 0px 10px;
+	}
+
 	&::before {
 		content: "";
 		display: block;
@@ -36,6 +42,10 @@
 	margin-top: 64px;
 	position: relative;
 
+	@include mq(lg) {
+		margin-top: 40px;
+	}
+
 	&::after {
 		content: "";
 		background: url(../img/about-img.png);
@@ -45,6 +55,13 @@
 		position: absolute;
 		top: 0;
 		left: 538px;
+
+		@include mq(lg) {
+			width: 65px;
+			height: 78px;
+			left: auto;
+			right: 0;
+		}
 	}
 }
 
@@ -57,4 +74,100 @@
 	display: flex;
 	flex-direction: row;
 	gap: 24px;
+
+	@include mq(lg) {
+		flex-direction: column;
+	}
+}
+
+// Philosophy
+.philosophy {
+	margin-top: 80px;
+}
+
+.philosophy__img-box {
+	margin-top: 64px;
+}
+
+// company-overview
+.company-overview {
+	margin-top: 51px;
+}
+
+.company-overview__text-box {
+	display: flex;
+	flex-direction: row;
+	gap: 157px;
+	margin-top: 64px;
+}
+
+.company-overview__text {
+	width: 465px;
+}
+
+.post {
+	margin-top: 16px;
+	line-height: 1;
+}
+
+.name {
+	margin-top: 24px;
+	font-size: 32px;
+	font-weight: bold;
+	color: $main-color;
+	line-height: 1;
+}
+
+.company-overview__table {
+	margin-top: 52px;
+	width: 100%;
+}
+
+.company-overview__tr {
+	border-bottom: 1px solid $accent-color;
+}
+
+.company-overview__th,
+.company-overview__td {
+	padding: 30px 0;
+	line-height: 1;
+}
+
+.company-overview__th {
+	padding: 30px 0;
+	text-align: left;
+	font-weight: bold;
+	width: 25%;
+}
+
+// safety
+.safety {
+	margin-top: 56px;
+}
+
+.safety__title {
+	font-size: 24px;
+	font-weight: bold;
+
+	&:nth-of-type(1) {
+		margin-top: 86px;
+	}
+	&:nth-of-type(2) {
+		margin-top: 25px;
+	}
+}
+
+.safety__contents {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	margin-top: 31px;
+}
+
+.safety__text {
+	width: 642px;
+}
+
+#about-page .contact {
+	margin-top: 193px;
 }

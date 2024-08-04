@@ -61,6 +61,7 @@
 		color: $text-color;
 		line-height: 1;
 		text-align: center;
+		transition: .3s;
 
 		&:hover {
 			background: $main-color;
@@ -73,4 +74,13 @@
 		width: 10px;
 		height: 10px;
 	}
+}
+.about-us__item .btn-hover {
+	display: none;
+}
+.about-us__item:hover .btn-hover {
+	display: inline-block;
+}
+.about-us__item:hover .btn-normal {
+	display: none;
 }

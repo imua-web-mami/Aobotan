@@ -10,3 +10,11 @@
 		padding-inline: 20px;
 	}
 }
+
+.page-inner {
+  width: 953px;
+
+  @include mq(lg) {
+    padding-inline: 20px;
+  }
+}
