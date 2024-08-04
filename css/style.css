@@ -262,6 +262,7 @@ body {
 .header__nav-item {
   width: inherit;
   border-bottom: 1px solid #B1C6DC;
+  position: relative;
 }
 .header__nav-item a {
   padding: 32px 0;
@@ -276,7 +277,6 @@ body {
 
 .header__nav-link {
   width: calc(100% - 24px);
-  position: relative;
 }
 
 .hoverOpen {
@@ -288,6 +288,7 @@ body {
   right: 0;
   transform: translateY(-50%);
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .hoverOpen::before,
@@ -312,7 +313,7 @@ body {
 }
 
 /* closeというクラスがついたら形状変化 */
-.hoverOpen.close::after {
+.hoverOpen:hover::after {
   display: none;
 }
 
