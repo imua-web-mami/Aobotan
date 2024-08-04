@@ -77,7 +77,7 @@
 }
 
 .header__nav-link {
-	width: calc(100% - 24px);
+	width: 100%;
 
 }
 
@@ -93,8 +93,8 @@
 	cursor: pointer;
 }
 
-.hoverOpen::before,
-.hoverOpen::after {
+.header__nav-link::before,
+.header__nav-link::after {
 	position: absolute;
 	content: '';
 	width: 24px;
@@ -103,20 +103,20 @@
 
 }
 
-.hoverOpen::before {
-	top: 50%;
+.header__nav-link::before {
+	top: 42px;
 	right: 0;
 	transform: rotate(0deg);
 }
 
-.hoverOpen::after {
-	top: 50%;
+.header__nav-link::after {
+	top: 42px;
 	right: 0;
 	transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.hoverOpen:hover::after {
+.header__nav-link:hover::after {
 	display: none;
 }
 

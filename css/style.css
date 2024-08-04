@@ -142,6 +142,12 @@ button {
   }
 }
 
+.h2-title {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+}
+
 .btn-more {
   width: 240px;
   height: 60px;
@@ -180,6 +186,32 @@ button {
   background: #fff;
   top: 23px;
   right: 23px;
+}
+
+.btn-down {
+  width: 208px;
+  height: 61px;
+  border: 1px solid #4282B8;
+  border-radius: 10px;
+}
+.btn-down a {
+  display: block;
+  border-radius: 10px;
+  padding-top: 11px;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  line-height: 1;
+  text-align: center;
+}
+.btn-down a:hover {
+  background: #4282B8;
+  color: #fff;
+}
+.btn-down img {
+  margin-top: 13px;
+  width: 10px;
+  height: 10px;
 }
 
 body {
@@ -276,7 +308,7 @@ body {
 }
 
 .header__nav-link {
-  width: calc(100% - 24px);
+  width: 100%;
 }
 
 .hoverOpen {
@@ -291,8 +323,8 @@ body {
   cursor: pointer;
 }
 
-.hoverOpen::before,
-.hoverOpen::after {
+.header__nav-link::before,
+.header__nav-link::after {
   position: absolute;
   content: "";
   width: 24px;
@@ -300,20 +332,20 @@ body {
   background-color: #4282B8;
 }
 
-.hoverOpen::before {
-  top: 50%;
+.header__nav-link::before {
+  top: 42px;
   right: 0;
   transform: rotate(0deg);
 }
 
-.hoverOpen::after {
-  top: 50%;
+.header__nav-link::after {
+  top: 42px;
   right: 0;
   transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.hoverOpen:hover::after {
+.header__nav-link:hover::after {
   display: none;
 }
 
@@ -859,9 +891,19 @@ body {
   transition-timing-function: linear;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
 .swiper-slide {
   width: 360px;
   height: 360px;
+  margin-right: 48px;
 }
 @media screen and (max-width: 1024px) {
   .swiper-slide {
@@ -1467,4 +1509,60 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   margin-right: 8px;
+}
+
+.about__fv-box {
+  width: calc(100% - 40px);
+  aspect-ratio: 1120/661;
+  border-radius: 50px;
+  margin-top: 40px;
+  position: relative;
+}
+.about__fv-box::before {
+  content: "";
+  display: block;
+  width: 62.6724137931%;
+  aspect-ratio: 727/563;
+  background: #4282B8;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  z-index: -10;
+}
+@media screen and (max-width: 1024px) {
+  .about__fv-box::before {
+    display: none;
+  }
+}
+.about__fv-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.about-us {
+  margin-top: 64px;
+  position: relative;
+}
+.about-us::after {
+  content: "";
+  background: url(../img/about-img.png);
+  background-size: contain;
+  width: 165px;
+  height: 198px;
+  position: absolute;
+  top: 0;
+  left: 538px;
+}
+
+.about-us__text {
+  margin-top: 64px;
+}
+
+.about-us__list {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }/*# sourceMappingURL=style.css.map */
