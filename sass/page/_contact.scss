@@ -96,6 +96,23 @@
 .contact__tel-number {
 	font-family: "Kanit", sans-serif;
 	font-size: 32px;
+
+	a {
+		color: $text-color;
+	}
+
+	a:hover {
+		@include mq(md) {
+			opacity: 0.7;
+		}
+	}
+
+	a[href*="tel:"] {
+		@media (min-width: 820px) {
+			pointer-events: none;
+			cursor: default;
+		}
+	}
 }
 
 .contact__b-hours {

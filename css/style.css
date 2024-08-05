@@ -1511,6 +1511,20 @@ body {
   font-family: "Kanit", sans-serif;
   font-size: 32px;
 }
+.contact__tel-number a {
+  color: #000000;
+}
+@media screen and (max-width: 820px) {
+  .contact__tel-number a:hover {
+    opacity: 0.7;
+  }
+}
+@media (min-width: 820px) {
+  .contact__tel-number a[href*="tel:"] {
+    pointer-events: none;
+    cursor: default;
+  }
+}
 
 .contact__b-hours {
   margin-top: 8px;
