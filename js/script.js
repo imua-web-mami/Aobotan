@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	MicroModal.init({
 		onShow: modal => {
 			// モーダルが表示されたときにスクロール位置をリセット
-			const modalContent = modal.querySelector('.modal__content');
+			const modalContent = modal.querySelector('.modal__container');
 			if (modalContent) {
 				modalContent.scrollTop = 0;
 			}

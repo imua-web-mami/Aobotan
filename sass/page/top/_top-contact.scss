@@ -1,4 +1,4 @@
-@use "../global/forward" as*;
+@use "../../global/forward" as*;
 
 .contact {
 	background: $bg-color;
@@ -123,27 +123,10 @@
 	}
 }
 
-.contact__btn {
+.contact__btn-box {
 	margin: 6px 0 0 64px;
-	width: 284px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
 
 	@include mq(lg) {
 		margin: 36px 0 0 0;
-	}
-
-	a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	img {
-		width: 20px;
-		height: 20px;
-		object-fit: contain;
-		margin-right: 8px;
 	}
 }

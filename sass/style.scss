@@ -7,9 +7,9 @@
 @use "../sass/foundation/base";
 @use "../sass/layout/header";
 @use "../sass/layout/footer";
-@use "../sass/page/main-visual";
-@use "../sass/page/about";
-@use "../sass/page/service";
-@use "../sass/page/news";
-@use "../sass/page/contact";
-@use "../sass/page/about-page";
+@use "../sass/page/top/top-main-visual";
+@use "../sass/page/top/top-about";
+@use "../sass/page/top/top-service";
+@use "../sass/page/top/top-news";
+@use "../sass/page/top/top-contact";
+@use "../sass/page/about/about-page";
