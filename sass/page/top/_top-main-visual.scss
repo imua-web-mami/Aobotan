@@ -156,6 +156,10 @@
 		bottom: 35px;
 		left: 9px;
 	}
+
+	@media screen and (min-width:1441px) {
+		font-size: 14px;
+	}
 		
 		&::after {
 			content: "";

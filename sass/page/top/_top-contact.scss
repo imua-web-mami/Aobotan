@@ -1,6 +1,6 @@
 @use "../../global/forward" as*;
 
-.contact {
+.top-contact {
 	background: $bg-color;
 	border-radius: 50px 0px 0px 50px;
 	margin-top: 132px;
@@ -22,7 +22,7 @@
 		height: 256px;
 		position: absolute;
 		top: 31px;
-		right: 40px;
+		left: 945px;
 
 		@include mq(lg) {
 			width: 59px;
@@ -33,28 +33,24 @@
 	}
 }
 
-.contact__title {
-
-	&::after {
-		content: "CONTACT";
-		color: $bg-color;
-	}
+.top-contact .section-title-en {
+	color: $bg-color;
 }
 
-.contact__contents {
-	margin-top: 187px;
+.top-contact__contents {
+	margin-top: 39px;
 	height: 68px;
 	display: flex;
 	flex-direction: row;
 
 	@include mq(lg) {
-		margin-top: 135px;
+		margin-top: 47px;
 		height: auto;
 		flex-direction: column;
 	}
 }
 
-.contact__tel {
+.top-contact__tel {
 	padding: 8px 32px 0 0;
 	font-family: "Kanit", sans-serif;
 	font-size: 32px;
@@ -83,7 +79,7 @@
 	}
 }
 
-.contact__contents-center {
+.top-contact__contents-center {
 	padding: 8px 32px 0 32px;
 	border-right: 1px solid $text-color;
 
@@ -93,7 +89,7 @@
 	}
 }
 
-.contact__tel-number {
+.top-contact__tel-number {
 	font-family: "Kanit", sans-serif;
 	font-size: 32px;
 
@@ -115,7 +111,7 @@
 	}
 }
 
-.contact__b-hours {
+.top-contact__b-hours {
 	margin-top: 8px;
 
 	@include mq(lg) {
@@ -123,7 +119,7 @@
 	}
 }
 
-.contact__btn-box {
+.top-contact__btn-box {
 	margin: 6px 0 0 64px;
 
 	@include mq(lg) {

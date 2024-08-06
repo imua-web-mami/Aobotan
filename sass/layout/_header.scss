@@ -76,47 +76,37 @@
 	}
 }
 
-.header__nav-link {
-	width: 100%;
-
+.header__nav-title {
+	padding: 32px 0;
+	display: block;
+	color: $text-color;
+	font-size: 20px;
+	position: relative;
 }
 
-.hoverOpen {
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	position: absolute;
-	top: 42px;
-	right: 0;
-	transform: translateY(-50%);
-	transition: all .5s ease;
-	cursor: pointer;
-}
-
-.header__nav-link::before,
-.header__nav-link::after {
+.header__nav-title::before,
+.header__nav-title::after {
 	position: absolute;
 	content: '';
 	width: 24px;
 	height: 1px;
 	background-color: $main-color;
-
 }
 
-.header__nav-link::before {
+.header__nav-title::before {
 	top: 42px;
 	right: 0;
 	transform: rotate(0deg);
 }
 
-.header__nav-link::after {
+.header__nav-title::after {
 	top: 42px;
 	right: 0;
 	transform: rotate(90deg);
 }
 
 /* closeというクラスがついたら形状変化 */
-.header__nav-link:hover::after {
+.header__nav-item.open .header__nav-title::after {
 	display: none;
 }
 
@@ -157,20 +147,17 @@
 
 /*アコーディオン全体*/
 .accordion-area {
-	list-style: none;
 	width: 96%;
 	max-width: 900px;
 	margin: 0 auto;
 }
 
-.accordion-area li {
-	margin: 10px 0;
+.sub-menu {
+	display: none; /* 初期状態で非表示 */
 }
 
-/*アコーディオンで現れるエリア*/
-.box {
-	display: none;
-	/*はじめは非表示*/
+.header__nav-item.open .sub-menu {
+	display: block; /* openクラスが付いている場合は表示 */
 }
 
 /*========= ナビゲーションのためのCSS ===============*/
@@ -205,7 +192,7 @@
 	z-index: 999;
 	top: 14px;
 	left: 50%;
-	transform: translateX( -50%);
+	transform: translateX(-50%);
 	text-align: center;
 }
 

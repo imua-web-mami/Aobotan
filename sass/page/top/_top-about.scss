@@ -1,6 +1,6 @@
 @use "../../global/forward" as*;
 
-.about {
+.top-about {
 	margin-top: 76px;
 	position: relative;
 
@@ -10,7 +10,7 @@
 	}
 }
 
-.about__slider-contents {
+.top-about__slider-contents {
 	background: $bg-color;
 	height: 486px;
 	display: flex;
@@ -51,19 +51,15 @@
   }
 }
 
-.about__title {
+.top-about__title {
 	margin-top: 71px;
 
 	@include mq(lg) {
 		margin-top: 126px;
 	}
-
-	&::after {
-		content: "ABOUT";
-	}
 }
 
-.about__catch-box {
+.top-about__catch-box {
 	background: $bg-color;
 	width: 172px;
 	height: 452px;
@@ -100,7 +96,7 @@
 	}
 }
 
-.about__catch {
+.top-about__catch {
 	height: 100%;
 	padding-top: 16px;
 	writing-mode: vertical-rl;
@@ -118,18 +114,17 @@
 	}
 }
 
-.about__text {
+.top-about__text {
 	width: 429px;
-	margin-top: 181px;
+	margin-top: 40px;
 
 	@include mq(lg) {
 		width: 100%;
 		font-size: 14px;
-		margin-top: 128px;
 	}
 }
 
-.about-btn {
+.top-about-btn {
 	margin-top: 40px;
 
 	@include mq(lg) {

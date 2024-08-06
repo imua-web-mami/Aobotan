@@ -18,11 +18,17 @@
 .footer__inner {
 	display: flex;
 	flex-direction: row;
-	gap: 109px;
+	justify-content: space-between;
+	padding-right: 40px;
 
 	@include mq(lg) {
 		flex-direction: column;
 		gap: 0;
+	}
+
+	@media screen and (max-width:1440px) {
+		justify-content: start;
+		gap: 109px;
 	}
 }
 

@@ -1,12 +1,22 @@
 // header アコーディオン
-$('.accodion .menu>li').find('ul').hide();
 
-$('.accodion .menu>li').hover(function () {
-	$(this).children('.sub-menu').stop().slideDown(500);
-}, function () {
-	$(this).children('.sub-menu').stop().slideUp(500);
+$(document).ready(function () {
+	// 初期状態で全てのサブメニューを非表示にする
+	$('.accodion .menu>li').find('ul').hide();
+
+	// アコーディオンのタイトルをホバーした時の処理
+	$('.accodion .menu>li').hover(function () {
+			var parentLi = $(this).closest('li');
+			// サブメニューを開いてopenクラスを追加
+			parentLi.children('.sub-menu').stop().slideDown(500);
+			parentLi.addClass('open');
+	}, function () {
+			// サブメニューを閉じてopenクラスを削除
+			var parentLi = $(this).closest('li');
+			parentLi.children('.sub-menu').stop().slideUp(500);
+			parentLi.removeClass('open');
+	});
 });
-
 
 // header g-nav
 
