@@ -28,7 +28,7 @@
 			width: 59px;
 			height: 86px;
 			top: -28px;
-			right: 20px;
+			left: 296px;
 		}
 	}
 }
@@ -100,13 +100,6 @@
 	a:hover {
 		@include mq(md) {
 			opacity: 0.7;
-		}
-	}
-
-	a[href*="tel:"] {
-		@media (min-width: 820px) {
-			pointer-events: none;
-			cursor: default;
 		}
 	}
 }

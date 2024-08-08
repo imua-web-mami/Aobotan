@@ -1,15 +1,18 @@
 @use "../../global/forward" as*;
 
+.about__fv {
+	padding-top: 40px;
+	position: relative;
+}
+
 .about__fv-box {
 	width: calc(100% - 40px);
-	aspect-ratio: 1120 / 661;
+	aspect-ratio: 1688 / 965;
 	border-radius: 50px;
-	margin-top: 40px;
-	position: relative;
 
 	@include mq(lg) {
 		width: calc(100% - 10px);
-		margin: 102px 0 0 10px;
+		margin: 62px 0 0 10px;
 		border-radius: 10px 0px 0px 10px;
 	}
 
@@ -30,6 +33,7 @@
 	}
 
 	img {
+		border-radius: inherit;
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
@@ -43,7 +47,7 @@
 	position: relative;
 
 	@include mq(lg) {
-		margin-top: 40px;
+		margin-top: 126px;
 	}
 
 	&::after {
@@ -59,14 +63,18 @@
 		@include mq(lg) {
 			width: 65px;
 			height: 78px;
-			left: auto;
-			right: 0;
+			left: 266px;
+			top: -62px;
 		}
 	}
 }
 
 .about-us__text {
 	margin-top: 64px;
+
+	@include mq(lg) {
+		margin-top: 40px;
+	}
 }
 
 .about-us__list {
@@ -76,98 +84,186 @@
 	gap: 24px;
 
 	@include mq(lg) {
+		margin-top: 32px;
 		flex-direction: column;
+		align-items: center;
 	}
 }
 
 // Philosophy
 .about-philosophy {
 	margin-top: 80px;
+
+	@include mq(lg) {
+		margin-top: 78px;
+	}
 }
 
-.philosophy__img-box {
+.about-philosophy__img-box {
 	margin-top: 64px;
+	width: 923px;
+	aspect-ratio: 923 / 519;
+	
+	@include mq(lg) {
+		width: 100%;
+		margin-top: 40px;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		
+	}
 }
 
 // company-overview
-.company-overview {
+.about-company-overview {
 	margin-top: 51px;
+
+	@include mq(lg) {
+		margin-top: 85px;
+	}
 }
 
-.company-overview__text-box {
+.about-company-overview__text-box {
 	display: flex;
 	flex-direction: row;
 	gap: 157px;
 	margin-top: 64px;
+
+	@include mq(lg) {
+		margin-top: 40px;
+		flex-direction: column;
+		gap: 50px;
+	}
 }
 
-.company-overview__text {
+.about-company-overview__text {
 	width: 465px;
+
+	@include mq(lg) {
+		width: 100%;
+	}
 }
 
-.post {
+.about-company-overview__profile-box {
+
+	@include mq(lg) {
+		text-align: center;
+	}
+}
+
+.about-post {
 	margin-top: 16px;
 	line-height: 1;
 }
 
-.name {
+.about-name {
 	margin-top: 24px;
 	font-size: 32px;
 	font-weight: bold;
 	color: $main-color;
 	line-height: 1;
+
+	@include mq(lg) {
+		font-size: 24px;
+	}
 }
 
-.company-overview__table {
+.about-company-overview__table {
 	margin-top: 52px;
 	width: 100%;
 }
 
-.company-overview__tr {
+.about-company-overview__tr {
 	border-bottom: 1px solid $accent-color;
 }
 
-.company-overview__th,
-.company-overview__td {
+.about-company-overview__th,
+.about-company-overview__td {
 	padding: 30px 0;
 	line-height: 1;
+
+	@include mq(lg) {
+		padding: 22px 0;
+	}
 }
 
-.company-overview__th {
+.about-company-overview__th {
 	padding: 30px 0;
 	text-align: left;
 	font-weight: bold;
 	width: 25%;
+	vertical-align: middle;
+
+	@include mq(lg) {
+		padding: 22px 0;
+		width: 30%;
+	}
+}
+
+.about-company-overview__td span {
+	margin-right: 16px;
+
+	@include mq(lg) {
+		display: block;
+		margin-bottom: 8px;
+	}
 }
 
 // safety
-.safety {
+.about-safety {
 	margin-top: 56px;
+
+	@include mq(lg) {
+		margin-top: 85px;
+	}
 }
 
-.safety__title {
-	font-size: 24px;
-	font-weight: bold;
+.about-safety__title {
 
 	&:nth-of-type(1) {
 		margin-top: 86px;
+
+		@include mq(lg) {
+			margin-top: 34px;	
+		}
 	}
 	&:nth-of-type(2) {
 		margin-top: 25px;
 	}
 }
 
-.safety__contents {
+.about-safety__contents {
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	margin-top: 31px;
+
+	@include mq(lg) {
+		flex-direction: column;
+	}
 }
 
-.safety__text {
+.about-safety__img-box {
+	@include mq(lg) {
+		text-align: center;
+	}
+}
+
+.about-safety__text {
 	width: 642px;
+
+	@include mq(lg) {
+		width: 100%;
+		margin-top: 26px;
+	}
 }
 
-#about-page .contact {
+#about-page .top-contact {
 	margin-top: 193px;
+
+	@include mq(lg) {
+		margin-top: 64px;
+	}
 }

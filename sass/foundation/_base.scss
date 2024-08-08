@@ -17,3 +17,10 @@ body {
 		margin-left: 0;
 	}
 }
+
+a[href*="tel:"] {
+	@media (min-width: 820px) {
+		pointer-events: none;
+		cursor: default;
+	}
+}

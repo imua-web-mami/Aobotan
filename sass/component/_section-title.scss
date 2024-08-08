@@ -33,7 +33,7 @@
 	line-height: 1;
 
 	@include mq(lg) {
-		font-size: 24px;
+		font-size: 32px;
 	}
 }
 
@@ -41,6 +41,15 @@
 	font-size: 32px;
 	font-weight: bold;
 	line-height: 1;
+
+	@include mq(lg) {
+		font-size: 24px;
+	}
+}
+
+.h4-title {
+	font-size: 24px;
+	font-weight: bold;
 
 	@include mq(lg) {
 		font-size: 20px;

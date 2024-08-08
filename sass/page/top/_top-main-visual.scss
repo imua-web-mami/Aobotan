@@ -1,18 +1,21 @@
 @use "../../global/forward" as*;
 
+.main-visual {
+	padding-top: 40px;
+}
+
 .main-visual__contents {
 	background: $bg-color;
 	width: calc(100% - 40px);
 	aspect-ratio: 1120 / 873;
 	border-radius: 50px;
-	margin-top: 40px;
 	position: relative;
 
 	@include mq(lg) {
 		width: calc(100% - 10px);
 		aspect-ratio: 365 / 589;
 		border-radius: 10px 0px 0px 10px;
-		margin: 102px 0 0 10px;
+		margin: 62px 0 0 10px;
 	}
 
 	&::before {
@@ -115,6 +118,12 @@
 	position: absolute;
 	bottom: calc(63 / 873 * 100%);
 	right: calc(127 / 1120 * 100%);
+
+	@include mq(lg) {
+		bottom: calc(60 / 589 * 100%);
+		right: auto;
+		left: calc(9 / 375 * 100%);
+	}
 }
 
 .main-visual__catch {
@@ -129,6 +138,7 @@
 
 	@include mq(lg) {
 		padding: 14px 13px;
+		margin-left: 13px;
 		font-size: 24px;
 	}
 }

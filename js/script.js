@@ -1,3 +1,11 @@
+// loading
+
+$(window).on('load',function(){
+  $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
+  $("#splash_logo").delay(1200).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト
+});
+
+
 // header アコーディオン
 
 $(document).ready(function () {
@@ -37,26 +45,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		direction: 'horizontal',
 		loop: true,
 		autoplay: {
-			delay: 0, // スライドが切り替わる間隔（ミリ秒）
+			delay: 1000, // スライドが切り替わる間隔（ミリ秒）
 			disableOnInteraction: false, // ユーザーが操作しても自動再生を無効にしない
 		},
-		speed: 6000, // トランジションのスピード（ミリ秒）
+		speed: 5000, // トランジションのスピード（ミリ秒）
 		slidesPerView: 'auto', // 'auto'の場合、適切なCSSスタイルが必要
 		spaceBetween: 48, // スライド間の余白（px）
-		// breakpoints: {
-		// 	320: {
-		// 		slidesPerView: 1,
-		// 		spaceBetween: 0,
-		// 		slidesPerGroup: 1,
-		// 	},
-		// 	820: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 0
-		// 	}
-		// },
 	});
 });
-
 
 // News モーダル
 
