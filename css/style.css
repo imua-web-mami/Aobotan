@@ -289,6 +289,11 @@ button {
   color: #fff;
 }
 
+#splash.is-active {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* Loading画像中央配置　*/
 #splash_logo {
   position: absolute;
@@ -320,6 +325,11 @@ button {
     transform: translateY(0);
   }
 }
+.fadeUp.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .fv {
   padding-top: 40px;
   position: relative;
@@ -597,11 +607,21 @@ body {
   opacity: 0.7;
 }
 
-.header__nav-contact img {
+.header__nav-contact {
+  position: relative;
+}
+.header__nav-contact a {
+  padding-left: 40px;
+}
+.header__nav-contact ::before {
+  content: "";
+  background: url(../img/mail-icon.png);
+  background-size: contain;
   width: 24px;
   height: 24px;
-  margin-right: 16px;
-  vertical-align: top;
+  position: absolute;
+  top: 30px;
+  left: 0;
 }
 
 .sub-menu {
@@ -863,10 +883,21 @@ body {
   }
 }
 
-.footer__nav-contact img {
+.footer__nav-contact {
+  position: relative;
+}
+.footer__nav-contact a {
+  padding-left: 28px;
+}
+.footer__nav-contact ::before {
+  content: "";
+  background: url(../img/mail-icon.png);
+  background-size: contain;
   width: 20px;
   height: 20px;
-  margin-right: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .footer__small {

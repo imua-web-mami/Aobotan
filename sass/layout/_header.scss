@@ -155,12 +155,21 @@
 }
 
 .header__nav-contact {
+	position: relative;
 
-	img {
+	a {
+		padding-left: 40px;
+	}
+
+	::before {
+		content: "";
+		background: url(../img/mail-icon.png);
+		background-size: contain;
 		width: 24px;
 		height: 24px;
-		margin-right: 16px;
-		vertical-align: top;
+		position: absolute;
+		top: 30px;
+		left: 0;
 	}
 }
 

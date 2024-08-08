@@ -129,11 +129,21 @@
 }
 
 .footer__nav-contact {
+	position: relative;
 
-	img {
+	a {
+		padding-left: 28px;
+	}
+
+	::before {
+		content: "";
+		background: url(../img/mail-icon.png);
+		background-size: contain;
 		width: 20px;
 		height: 20px;
-		margin-right: 8px;
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 }
 

@@ -11,6 +11,11 @@
 		text-align:center;
 		color:#fff;
 	}
+
+	#splash.is-active {
+		opacity: 0;
+		visibility: hidden;
+	}
 	
 	/* Loading画像中央配置　*/
 	#splash_logo {
@@ -43,4 +48,9 @@
 			opacity: 1;
 		transform: translateY(0);
 		}
+	}
+
+	.fadeUp.is-active {
+		opacity: 1;
+		visibility: visible;
 	}
