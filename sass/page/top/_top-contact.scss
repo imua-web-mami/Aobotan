@@ -19,10 +19,14 @@
 		background: url(../img/contact.png);
 		background-size: contain;
 		width: 175px;
-		height: 256px;
+		aspect-ratio: 175 / 256;
 		position: absolute;
 		top: 31px;
-		left: 945px;
+		left: calc(945 / 1160 * 100%);
+
+		@media screen and (max-width:1200px) {
+			width: 120px;
+		}
 
 		@include mq(lg) {
 			width: 59px;
@@ -44,7 +48,8 @@
 	flex-direction: row;
 
 	@include mq(lg) {
-		margin-top: 47px;
+		max-width: 335px;
+		margin: 47px auto 0 auto;
 		height: auto;
 		flex-direction: column;
 	}

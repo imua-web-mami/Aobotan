@@ -19,7 +19,7 @@
 		aspect-ratio: 124 / 172;
 		position: absolute;
 		top: 93px;
-		left: 858px;
+		left: calc(858 / 1160 * 100%);
 
 		@include mq(lg) {
 			width: 69px;
@@ -78,7 +78,15 @@
 		}
 	}
 	&:nth-child(even) .top-service__contents::after {
-		left: 310px;
+		left: calc(310 / 430 * 100%);
+
+		@media screen and (max-width:1300px) {
+			left: calc(290 / 430 * 100%);
+		}
+
+		@media screen and (max-width:1120px) {
+			left: calc(270 / 430 * 100%);
+		}
 
 		@include mq(lg) {
 			left: auto;

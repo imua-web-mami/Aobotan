@@ -19,7 +19,7 @@
 	<meta name="twitter:site" content="@Mami137847" />
 	<link rel="stylesheet" href="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.css">
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="icon" href="img/favicon-aobotan 1.png">
+	<link rel="icon" href="../img/favicon-aobotan 1.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -27,130 +27,293 @@
 		rel="stylesheet">
 </head>
 
-<body class="type-column">
-	<header class="header left-side">
-		<h1 class="header__logo"><a href="index.html"><img src="img/logo-pc.svg" alt="青牡丹工務店"></a></h1>
-
-		<nav class="header__nav">
-			<ul class="accordion-area">
+<body>
+	<header class="header">
+		<h1 class="header__logo"><a href="../index.html"><img src="../img/logo-pc.svg" alt="青牡丹工務店"></a></h1>
+		<nav class="header__nav accodion">
+			<ul class="header__nav-list menu">
 				<li class="header__nav-item">
-					<details>
-						<summary class="title"><a href="../about/index.html">私達について</a></summary>
-						<div class="box">
-							<p class="header__about-item"><a href="#">経営理念</a></p>
-							<p class="header__about-item"><a href="#">会社概要</a></p>
-							<p class="header__about-item"><a href="#">安全への取り組み</a></p>
-						</div>
-					</details>
+					<div class="accordion-area">
+						<p class="header__nav-title">私達について</p>
+					</div>
+					<ul class="sub-menu">
+						<li class="header__about-item"><a href="../about/index.html#about-philosophy">経営理念</a></li>
+						<li class="header__about-item"><a href="../about/index.html#about-company-overview">会社概要</a></li>
+						<li class="header__about-item"><a href="../about/index.html#about-safety">安全への取り組み</a></li>
+					</ul>
 				</li>
 				<li class="header__nav-item">
-					<details>
-						<summary class="title"><a href="#abot">事業内容</a></summary>
-						<div class="box">
-							<p class="header__about-item"><a href="#">住宅建築・リフォーム</a></p>
-							<p class="header__about-item"><a href="#">法人新築・リフォーム</a></p>
-							<p class="header__about-item"><a href="#">公共工事</a></p>
-						</div>
-					</details>
+					<div class="accordion-area">
+						<p class="header__nav-title">事業内容</p>
+					</div>
+					<ul class="sub-menu">
+						<li class="header__about-item"><a href="#service-house">住宅建築・リフォーム</a></li>
+						<li class="header__about-item"><a href="#service-corporation">法人新築・リフォーム</a></li>
+						<li class="header__about-item"><a href="#service-infrastructure">公共工事</a></li>
+					</ul>
 				</li>
-				<li class="header__nav-item"><a href="">お知らせ</a></li>
-				<li class="header__nav-item header__nav-contact"><a href=""><img src="img/mail-icon.png" alt="メール">お問い合わせ</a>
+				<li class="header__nav-item"><a href="#news">お知らせ</a></li>
+				<li class="header__nav-item header__nav-contact"><a href="contact/index.html"><img src="../img/mail-icon.png"
+							alt="メール">お問い合わせ</a>
 				</li>
 			</ul>
 		</nav>
+		<button class="menu-btn" type="button" aria-expanded="false" aria-controls="g-nav">
+			<span></span><span></span><span></span>
+		</button>
+		<nav class="g-nav">
+			<ul class="g-nav-list">
+				<li class="g-nav-item"><a href="../index.html">トップページ</a></li>
+				<li class="g-nav-item"><a href="index.html">私達について</a></li>
+				<li class="g-nav-item"><a href="#">経営理念</a></li>
+				<li class="g-nav-item"><a href="#">会社概要</a></li>
+				<li class="g-nav-item"><a href="#">安全への取り組み</a></li>
+				<li class="g-nav-item"><a href="#service-intro">事業内容</a></li>
+				<li class="g-nav-item"><a href="#service-house">住宅建築・リフォーム</a></li>
+				<li class="g-nav-item"><a href="#service-corporation">法人新築・リフォーム</a></li>
+				<li class="g-nav-item"><a href="#service-infrastructure">公共工事</a></li>
+				<li class="g-nav-item"><a href="#">お知らせ</a></li>
+				<li class="g-nav-item"><a href="#"><img src="../img/mail-icon.png" alt="">お問い合わせ</a></li>
+				<li class="g-nav-small"><small>&copy; AOBOTAN INC.</small></li>
+			</ul>
+		</nav>
 	</header>
-	<main class="main">
-		
-		<section class="contact" id="contact">
-			<div class="inner">
-				<h2 class="section-title title-contact">
-					お問い合わせ
+	<main class="main" id="service-page">
+		<section class="fv">
+			<figure class="fv-box">
+				<img src="../img/service-fv.jpg" alt="">
+			</figure>
+		</section>
+		<section class="intro" id="service-intro">
+			<div class="page-inner">
+				<h2 class="h2-title">
+					事業内容
 				</h2>
-				<div class="contact__contents">
-					<p class="contact__tel">
+				<p class="intro__text">
+					青牡丹工務店は、「住宅建築・リフォーム」「方針新築・リフォーム」「公共工事」の3つを事業の柱としています。ここではそれぞれご紹介します。
+				</p>
+				<ul class="intro__list">
+					<li class="intro__item">
+						<a href="#about-philosophy" class="btn-down">住宅建築・リフォーム</a>
+					</li>
+					<li class="intro__item">
+						<a href="#about-company-overview" class="btn-down">法人新築・リフォーム</a>
+					</li>
+					<li class="intro__item">
+						<a href="#about-safety" class="btn-down">公共工事</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="service-contents" id="service-house">
+			<figure class="service__section-img">
+				<img src="../img/service-page01.jpg" alt="">
+			</figure>
+			<div class="service-contents__inner">
+				<h3 class="service-contents__title">
+					住宅建築・リフォーム
+				</h3>
+				<div class="service-contents__text-box">
+					<h4 class="service-contents__lead">
+						当社の住宅建築・リフォーム事業では、<br>
+						お客様の夢や理想を具現化するための<br>
+						サービスを提供しています。
+					</h4>
+					<p class="service-contents__text">
+						新しい家を建てる際には、お客様のニーズや希望を理解し、オーダーメイドの住宅を設計・施工します。<br>
+						また、古くなったり、機能性が低下したりした建物を、新しい価値ある空間へと再生するリフォームサービスを提供しています。お客様のライフスタイルやニーズに合わせて、効率的かつリーズナブルなリフォームプランをご提案し、品質に妥協することなく施工いたします。
+					</p>
+				</div>
+				<ul class="service-contents__ex-list">
+					<li class="service-contents__ex-item">
+						<p class="service-contents__ex-title">
+							芦屋（兵庫県）のコテージ付き住宅
+						</p>
+						<figure class="service-contents__ex-img">
+							<img src="../img/service-page01a.jpg" alt="">
+							<figcaption class="service-contents__figcap">施工年月：R2年2月 構造：S造</figcaption>
+						</figure>
+					</li>
+					<li class="service-contents__ex-item">
+						<p class="service-contents__ex-title">
+							鷹峯（京都府京都市）のモダン和風住宅
+						</p>
+						<figure class="service-contents__ex-img">
+							<img src="../img/service-page01b.jpg" alt="">
+							<figcaption class="service-contents__figcap">施工年月：R4年4月 構造：木造</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="service-contents" id="service-corporation">
+			<figure class="service__section-img">
+				<img src="../img/service-page02.jpg" alt="">
+			</figure>
+			<div class="service-contents__inner">
+				<h3 class="service-contents__title">
+					法人新築・リフォーム
+				</h3>
+				<div class="service-contents__text-box">
+					<h4 class="service-contents__lead">
+						当社の法人新築・リフォームサービスでは、商業施設やオフィスビル、工場など、法人向けの建物の新築や改修を手がけています。
+					</h4>
+					<p class="service-contents__text">
+						既存の商業施設やオフィス、工場などの建物を改修し、最新のビジネスニーズに適した空間へと生まれ変わらせます。設備の更新やレイアウトの見直し、外装や内装のリニューアルなど、お客様の要望に応じたリフォームプランを提案し、スムーズな工事を実施します。
+					</p>
+				</div>
+				<ul class="service-contents__ex-list">
+					<li class="service-contents__ex-item">
+						<p class="service-contents__ex-title">
+							株式会社kaminari station
+						</p>
+						<figure class="service-contents__ex-img">
+							<img src="../img/service-page02a.jpg" alt="">
+							<figcaption class="service-contents__figcap">施工年月：H25年4月 構造：S造</figcaption>
+						</figure>
+					</li>
+					<li class="service-contents__ex-item">
+						<p class="service-contents__ex-title">
+							鯉登陸運(株)
+						</p>
+						<figure class="service-contents__ex-img">
+							<img src="../img/service-page02b.jpg" alt="">
+							<figcaption class="service-contents__figcap">施工年月：R4年3月 構造：S造</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="service-contents" id="service-infrastructure">
+			<figure class="service__section-img">
+				<img src="../img/service-page03.jpg" alt="">
+			</figure>
+			<div class="service-contents__inner">
+				<h3 class="service-contents__title">
+					公共工事
+				</h3>
+				<div class="service-contents__text-box">
+					<h4 class="service-contents__lead">
+						公共工事事業は、道路や橋梁、公共施設などの建設・改修を行う事業です。
+					</h4>
+					<p class="service-contents__text">
+						公共工事事業は、地域社会の発展や住民の生活に密接に関わる重要な事業です。政府や自治体からの発注が多く、厳しい品質基準や工期管理が求められます。当社では、経験豊富な専門家がチームを組み、最新の技術とノウハウを駆使して、安全で信頼性の高い公共施設の建設に貢献しています。
+					</p>
+				</div>
+				<ul class="service-contents__ex-list">
+					<li class="service-contents__ex-item">
+						<p class="service-contents__ex-title">
+							神戸市立真島小学校　内装工事
+						</p>
+						<figure class="service-contents__ex-img">
+							<img src="../img/service-page03a.jpg" alt="">
+							<figcaption class="service-contents__figcap">施工年月：R1年3月 構造：S造</figcaption>
+						</figure>
+					</li>
+					<li class="service-contents__ex-item">
+						<p class="service-contents__ex-title">
+							枚方市立暮方郵便局
+						</p>
+						<figure class="service-contents__ex-img">
+							<img src="../img/service-page03b.jpg" alt="">
+							<figcaption class="service-contents__figcap">施工年月：R4年4月 構造：木造</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="top-contact" id="top-contact">
+			<div class="inner">
+				<h2 class="top-contact__title">
+					<span class="section-title-jp">お問い合わせ</span>
+					<span class="section-title-en">CONTACT</span>
+				</h2>
+				<div class="top-contact__contents">
+					<p class="top-contact__tel">
 						Tel
 					</p>
-					<div class="contact__contents-center">
-						<p class="contact__tel-number">
-							0000-000-0000
+					<div class="top-contact__contents-center">
+						<p class="top-contact__tel-number">
+							<a href="tel:00000000000">0000-000-0000</a>
 						</p>
-						<p class="contact__b-hours">
+						<p class="top-contact__b-hours">
 							営業時間<time>10:00</time>-<time>20:00</time>
 						</p>
 					</div>
-					<div class="btn-more contact__btn">
-						<a href="#"><img src="img/mail-icon.png" alt="">メールフォームはこちら</a>
+					<div class="top-contact__btn-box">
+						<a href="#" class="btn-more top-contact__btn">メールフォームはこちら</a>
 					</div>
 				</div>
 			</div>
 		</section>
-
 	</main>
 
 	<footer class="footer">
-		<div class="footer__left-side">
-			<figure class="footer__logo">
-				<img src="img/logo-pc.png" alt="青牡丹工務店">
-			</figure>
-			<address>
-				<p class="footer__address">〒000-0000</p>
-				<p class="footer__address">大阪府大阪市中央区北区南町5-6-7</p>
-				<dl class="address-list">
-					<div class="address-box">
-						<dt class="address-term">営業時間</dt>
-						<dd class="address-desc"><time datetime="10:00">10:00</time>~<time datetime="20:00">20:00</time></dd>
-					</div>
-					<div class="address-box">
-						<dt class="address-term">定休日</dt>
-						<dd class="address-desc">日曜日、祝日、年末年始（12月31日から1月3日まで）</dd>
-					</div>
-				</dl>
-			</address>
+		<div class="inner footer__inner">
+			<div class="footer__left-side">
+				<figure class="footer__logo">
+					<img src="../img/logo-pc.png" alt="青牡丹工務店">
+				</figure>
+				<address>
+					<p class="footer__address">〒000-0000</p>
+					<p class="footer__address">大阪府大阪市中央区北区南町5-6-7</p>
+					<dl class="address-list">
+						<div class="address-box">
+							<dt class="address-term">営業時間</dt>
+							<dd class="address-desc"><time datetime="10:00">10:00</time>~<time datetime="20:00">20:00</time></dd>
+						</div>
+						<div class="address-box">
+							<dt class="address-term">定休日</dt>
+							<dd class="address-desc">日曜日、祝日、年末年始（12月31日から1月3日まで）</dd>
+						</div>
+					</dl>
+				</address>
+			</div>
+			<nav class="footer__nav">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-item">
+						<a href="#">トップページ</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">私たちについて</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">経営理念</a>
+					</li><br>
+					<li class="footer__nav-item">
+						<a href="#">会社概要</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">安全への取り組み</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">事業内容</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">住宅建築・リフォーム</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">法人新築・リフォーム</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">公共工事</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#">お知らせ</a>
+					</li>
+					<li class="footer__nav-item footer__nav-contact">
+						<a href="#"><img src="../img/mail-icon.png" alt="メール">お問い合わせ</a>
+					</li>
+				</ul>
+			</nav>
+			<small class="footer__small">&copy; AOBOTAN INC.</small>
 		</div>
-		<nav class="footer__nav">
-			<ul class="footer__nav-list">
-				<li class="footer__nav-item">
-					<a href="#">トップページ</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">私たちについて</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">経営理念</a>
-				</li><br>
-				<li class="footer__nav-item">
-					<a href="#">会社概要</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">安全への取り組み</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">事業内容</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">住宅建築・リフォーム</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">法人新築・リフォーム</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">公共工事</a>
-				</li>
-				<li class="footer__nav-item">
-					<a href="#">お知らせ</a>
-				</li>
-				<li class="footer__nav-item footer__nav-contact">
-					<a href="#"><img src="img/mail-icon.png" alt="メール">お問い合わせ</a>
-				</li>
-			</ul>
-		</nav>
-		<small class="footer__small">&copy; AOBOTAN INC.</small>
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.js"></script>
 	<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="../js/script.js"></script>
 </body>
 
 </html>

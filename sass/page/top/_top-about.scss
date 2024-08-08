@@ -61,7 +61,7 @@
 	height: 452px;
 	position: absolute;
 	top: 254px;
-	right: 182px;
+	left: calc(806 / 1160 * 100%);
 	z-index: 10;
 	display: flex;
 	justify-content: center;
@@ -76,12 +76,16 @@
 	&::before {
 		content: "";
 		width: 161px;
-		height: 213px;
+		aspect-ratio: 161 / 213;
 		background: url(../img/about.png) no-repeat;
 		background-size: contain;
 		position: absolute;
 		top: 198px;
 		left: -181px;
+
+		@media screen and (max-width:1200px) {
+			width: 120px;
+		}
 
 		@include mq(lg) {
 			width: 60px;

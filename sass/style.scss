@@ -5,6 +5,7 @@
 @use "../sass/component/section-title";
 @use "../sass/component/btn";
 @use "../sass/component/loading";
+@use "../sass/component/fv-intro";
 @use "../sass/foundation/base";
 @use "../sass/layout/header";
 @use "../sass/layout/footer";
@@ -14,3 +15,4 @@
 @use "../sass/page/top/top-news";
 @use "../sass/page/top/top-contact";
 @use "../sass/page/about/about-page";
+@use "../sass/page/service/service-page";
