@@ -89,7 +89,6 @@
 	font-weight: bold;
 
 	@include mq(lg) {
-		width: calc(100% - 57px);
 		margin-top: 16px;
 		font-size: 14px;
 	}
@@ -98,19 +97,84 @@
 
 // modal
 
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	overflow-y: auto;
+}
+
+.modal-close-box {
+	width: 908px;
+	max-height: 95%;
+	position: relative;
+
+	@include mq(lg) {
+		width: calc(100% - 29px);
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.modal__container {
+	width: 860px;
+  background-color: #fff;
+  padding: 16px 0;
+	overflow-y: auto;
+
+	@include mq(lg) {
+		width: calc(100% - 58px);
+	}
+}
+
 .modal-inner {
 	width: 656px;
 	margin-inline: auto;
+
+	@include mq(lg) {
+		width: calc(90%);
+	}
+}
+
+.modal__close-btn-img {
+	width: 32px;
+	height: 32px;
+	margin-top: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	@include mq(lg) {
+		width: 24px;
+		height: 24px;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .modal-title {
 	margin-top: 21px;
 	font-size: 24px;
 	line-height: 1.8;
+	font-weight: bold;
+
+	@include mq(lg) {
+		font-size: 18px;
+	}
 }
 
 .top-news__img-box {
-	margin-top: 16px;
+	margin-top: 14px;
 }
 
 .top-news__modal-img {
@@ -151,36 +215,18 @@
 #modal-3.is-open {
   display: block;
 }
-.modal__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	overflow-y: auto;
-}
-.modal__container {
-	width: 860px;
-	max-height: 95%;
-  background-color: #fff;
-  padding: 16px 0;
-	overflow-y: auto;
-}
+
 
 .modal__close {
-	margin-top: 61px;
 	text-align: center;
-
+	
 	&:hover {
 		color: $white;
 	}
 }
 
 .modal-btn-box {
-	text-align: center;
+	margin-top: 61px;
+	display: flex;
+	justify-content: center;
 }

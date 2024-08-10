@@ -13,6 +13,10 @@
 		margin-top: 64px;
 		padding: 27px 0 41px 0;
 	}
+}
+
+.top-contact .inner {
+	position: relative;
 
 	&::after {
 		content: "";
@@ -22,16 +26,17 @@
 		aspect-ratio: 175 / 256;
 		position: absolute;
 		top: 31px;
-		left: calc(945 / 1160 * 100%);
-
+		right: 40px;
+	
 		@media screen and (max-width:1200px) {
 			width: 120px;
 		}
-
+	
 		@include mq(lg) {
 			width: 59px;
 			height: 86px;
 			top: -28px;
+			right: auto;
 			left: 296px;
 		}
 	}

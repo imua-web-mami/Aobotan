@@ -53,11 +53,22 @@ $(document).ready(function () {
 $(".menu-btn").click(function () {//ボタンがクリックされたら
 	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
 	$(".g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+	$("body").toggleClass("is-scroll");
 });
 
 $(".g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
 	$(".menu-btn").removeClass('active');//ボタンの activeクラスを除去し
 	$(".g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+	$("body").removeClass("is-scroll");
+});
+
+// resizeイベント
+$(window).on('resize', function() {
+	if (window.matchMedia("(min-width: 820px)").matches) {
+			$(".menu-btn").removeClass("active");
+			$(".g-nav").removeClass("panelactive");
+			$("body").removeClass("is-scroll");
+	}
 });
 
 // about swiperスライドショー

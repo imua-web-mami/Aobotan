@@ -11,25 +11,6 @@
 		padding: 26px 0 91px 0;
 	}
 
-	&::before {
-		content: "";
-		background: url(../img/service-img.png) no-repeat;
-		background-size: contain;
-		width: 124px;
-		aspect-ratio: 124 / 172;
-		position: absolute;
-		top: 93px;
-		left: calc(858 / 1160 * 100%);
-
-		@include mq(lg) {
-			width: 69px;
-			aspect-ratio: 69 / 96;
-			top: -48px;
-			left: auto;
-			right: 20px;
-		}
-	}
-
 	&::after {
 		content: "";
 		background: $bg-color;
@@ -50,6 +31,25 @@
 
 .top-service__inner {
 	max-width: 1045px;
+	position: relative;
+
+	&::before {
+		content: "";
+		background: url(../img/service-img.png) no-repeat;
+		background-size: contain;
+		width: 124px;
+		aspect-ratio: 124 / 172;
+		position: absolute;
+		top: 93px;
+		right: 60px;
+
+		@include mq(lg) {
+			width: 69px;
+			aspect-ratio: 69 / 96;
+			top: -48px;
+			right: 20px;
+		}
+	}
 }
 
 .top-service__list {
