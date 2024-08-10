@@ -129,21 +129,21 @@
 }
 
 .footer__nav-contact {
-	position: relative;
-
+	
 	a {
+		position: relative;
 		padding-left: 28px;
-	}
 
-	::before {
-		content: "";
-		background: url(../img/mail-icon.png);
-		background-size: contain;
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		left: 0;
-		top: 0;
+		&::before {
+			content: "";
+			background: url(../img/mail-icon.png);
+			background-size: contain;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			left: 0;
+			top: 2px;
+		}
 	}
 }
 

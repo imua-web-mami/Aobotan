@@ -334,6 +334,11 @@ button {
   padding-top: 40px;
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  .fv {
+    padding-top: 23px;
+  }
+}
 
 .fv-box {
   width: calc(100% - 40px);
@@ -343,7 +348,7 @@ button {
 @media screen and (max-width: 1024px) {
   .fv-box {
     width: calc(100% - 10px);
-    margin: 62px 0 0 10px;
+    margin: 0 0 0 10px;
     border-radius: 10px 0px 0px 10px;
   }
 }
@@ -455,6 +460,7 @@ body.is-scroll {
 }
 
 .header {
+  height: 0;
   padding-top: 74px;
   padding-inline: 40px;
   line-height: 1;
@@ -888,13 +894,11 @@ body.is-scroll {
   }
 }
 
-.footer__nav-contact {
-  position: relative;
-}
 .footer__nav-contact a {
+  position: relative;
   padding-left: 28px;
 }
-.footer__nav-contact ::before {
+.footer__nav-contact a::before {
   content: "";
   background: url(../img/mail-icon.png);
   background-size: contain;
@@ -902,7 +906,7 @@ body.is-scroll {
   height: 20px;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 2px;
 }
 
 .footer__small {
@@ -923,6 +927,11 @@ body.is-scroll {
 .main-visual {
   padding-top: 40px;
 }
+@media screen and (max-width: 1024px) {
+  .main-visual {
+    padding-top: 23px;
+  }
+}
 
 .main-visual__contents {
   background: #F8F8F8;
@@ -936,7 +945,7 @@ body.is-scroll {
     width: calc(100% - 10px);
     aspect-ratio: 365/589;
     border-radius: 10px 0px 0px 10px;
-    margin: 62px 0 0 10px;
+    margin: 0 0 0 10px;
   }
 }
 .main-visual__contents::before {
@@ -1163,15 +1172,17 @@ body.is-scroll {
   height: 360px;
 }
 
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+
 .swiper-slide {
   width: 360px;
-  height: 360px;
-  margin-right: 48px;
+  height: auto;
 }
 @media screen and (max-width: 1024px) {
   .swiper-slide {
     width: 200px;
-    height: 200px;
   }
 }
 .swiper-slide img {
@@ -1738,7 +1749,7 @@ body.is-scroll {
   .top-contact .inner::after {
     width: 59px;
     height: 86px;
-    top: -28px;
+    top: -55px;
     right: auto;
     left: 296px;
   }

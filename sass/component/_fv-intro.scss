@@ -3,6 +3,10 @@
 .fv {
 	padding-top: 40px;
 	position: relative;
+
+	@include mq(lg) {
+		padding-top: 23px;
+	}
 }
 
 .fv-box {
@@ -12,7 +16,7 @@
 
 	@include mq(lg) {
 		width: calc(100% - 10px);
-		margin: 62px 0 0 10px;
+		margin: 0 0 0 10px;
 		border-radius: 10px 0px 0px 10px;
 	}
 

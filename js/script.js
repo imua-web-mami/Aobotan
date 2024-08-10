@@ -1,3 +1,23 @@
+// ヘッダーの高さ分だけコンテンツを下げる
+$(function () {
+  const height = $(".js-header").height();
+  $("main").css("margin-top", height);
+});
+// ページ内スクロール
+$(function () {
+  // ヘッダーの高さ取得
+  const headerHeight = $(".js-header").height();
+  $('a[href^="#"]').click(function () {
+    const speed = 600;
+    let href = $(this).attr("href");
+    let target = $(href == "#" || href == "" ? "html" : href);
+    // ヘッダーの高さ分下げる
+    let position = target.offset().top - headerHeight;
+    $("body,html").animate({ scrollTop: position }, speed, "swing");
+    return false;
+  });
+});
+
 // loading
 
 // $(window).on('load',function(){
@@ -73,18 +93,15 @@ $(window).on('resize', function() {
 
 // about swiperスライドショー
 
-document.addEventListener('DOMContentLoaded', function () {
-	const swiper = new Swiper('.swiper', {
-		direction: 'horizontal',
-		loop: true,
-		autoplay: {
-			delay: 1000, // スライドが切り替わる間隔（ミリ秒）
-			disableOnInteraction: false, // ユーザーが操作しても自動再生を無効にしない
-		},
-		speed: 5000, // トランジションのスピード（ミリ秒）
-		slidesPerView: 'auto', // 'auto'の場合、適切なCSSスタイルが必要
-		spaceBetween: 48, // スライド間の余白（px）
-	});
+const swiper = new Swiper(".swiper", {
+  loop: true, // ループ有効
+  slidesPerView: 'auto', // 一度に表示する枚数
+	spaceBetween: 48,
+  speed: 6000, // ループの時間
+  allowTouchMove: false, // スワイプ無効
+  autoplay: {
+    delay: 0, // 途切れなくループ
+  },
 });
 
 // News モーダル
