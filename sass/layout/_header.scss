@@ -2,7 +2,6 @@
 
 .header {
 	height: 0;
-	padding-top: 74px;
 	padding-inline: 40px;
 	line-height: 1;
 	position: fixed;
@@ -26,6 +25,7 @@
 }
 
 .header__logo {
+	margin-top: 74px;
 	width: 200px;
 	aspect-ratio: 200 / 121;
 	margin-inline: auto;
