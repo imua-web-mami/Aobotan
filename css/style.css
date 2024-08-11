@@ -652,7 +652,7 @@ body.is-scroll {
   opacity: 0;
   top: 79px;
   width: 100%;
-  height: calc(100vh - 79px);
+  height: calc(100dvh - 79px);
   /*ナビの高さ*/
   background: #fff;
   /*動き*/
@@ -2180,4 +2180,77 @@ body.is-scroll {
 
 #service-page .top-contact {
   margin-top: 106px;
+}
+
+.contact-page .intro {
+  margin-top: 69px;
+}
+.contact-page .intro::after {
+  background: url(../img/contact-img.png) no-repeat;
+  background-size: contain;
+  height: 178px;
+}
+
+.contact__flow-container {
+  margin-top: 62px;
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
+
+.contact__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact__item {
+  counter-increment: mycounter;
+  width: 209px;
+  height: 58px;
+  background: #4282B8;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.contact__item::before {
+  content: counter(mycounter, decimal-leading-zero);
+  display: block;
+  font-size: 12px;
+}
+.contact__item:nth-child(2) {
+  background: #fff;
+  color: #4282B8;
+  border: 3px solid #4282B8;
+  margin-left: 52px;
+}
+.contact__item:nth-child(2)::after {
+  content: "";
+  width: 52px;
+  height: 1px;
+  background: #4282B8;
+  position: absolute;
+  top: 50%;
+  left: -54px;
+}
+
+.contact__tel-box {
+  line-height: 1;
+}
+
+.contact__tel-text {
+  font-weight: bold;
+}
+
+.contact__tel-number {
+  display: block;
+  margin-top: 29px;
+  font-size: 32px;
+  font-family: "Kanit", sans-serif;
+  color: #000000;
+}
+
+.contact__b-hours {
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

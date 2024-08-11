@@ -96,12 +96,17 @@ $(window).on('resize', function() {
 const swiper = new Swiper(".swiper", {
   loop: true, // ループ有効
   slidesPerView: 'auto', // 一度に表示する枚数
-	spaceBetween: 48,
+	spaceBetween: 16,
   speed: 6000, // ループの時間
   allowTouchMove: false, // スワイプ無効
   autoplay: {
     delay: 0, // 途切れなくループ
   },
+  breakpoints: {
+    1024: {
+      spaceBetween: 48,
+    }
+  }
 });
 
 // News モーダル
