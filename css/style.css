@@ -2253,4 +2253,106 @@ body.is-scroll {
   margin-top: 14px;
   font-size: 12px;
   font-weight: bold;
+}
+
+.contact-form {
+  margin-top: 17px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.form__item {
+  margin-top: 26px;
+}
+
+.form__label span {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+sup {
+  color: #FE0000;
+  vertical-align: baseline;
+}
+
+.form__radio-box {
+  margin-top: 27px;
+}
+
+.form__radio {
+  display: block;
+}
+
+.form__radio + .form__radio {
+  margin-top: 14px;
+}
+
+.form__text {
+  display: block;
+  width: 470px;
+  height: 60px;
+  margin-top: 27px;
+  background: #F8F8F8;
+  border: 1px solid #B1C6DC;
+}
+
+::-moz-placeholder {
+  font-weight: bold;
+  color: #C2C2C2;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+::placeholder {
+  font-weight: bold;
+  color: #C2C2C2;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.form__name-box {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.form__name-box .form__text {
+  width: 215px;
+}
+
+.form__check {
+  margin-top: 51px;
+  font-weight: normal;
+  margin-left: 71px;
+}
+
+.form__item-btn {
+  margin-top: 69px;
+}
+
+.form__input-check {
+  border: 1px solid #4282B8;
+}
+
+.form__item-btn {
+  margin-left: 92px;
+}
+
+.submit-btn {
+  width: 284px;
+  background: #4282B8;
+  color: #fff;
+  border: none;
+}
+.submit-btn::after {
+  background: #fff;
+}
+.submit-btn:hover {
+  background: #fff;
+  color: #4282B8;
+  border: 1px solid #4282B8;
+}
+.submit-btn:hover::after {
+  background: #4282B8;
+}
+
+.contact-page .top-contact {
+  margin-top: 72px;
 }/*# sourceMappingURL=style.css.map */
