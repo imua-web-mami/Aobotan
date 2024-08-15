@@ -19,16 +19,17 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-right: 40px;
+	padding-right: 20px;
 
 	@include mq(lg) {
 		flex-direction: column;
 		gap: 0;
+		padding-right: 0;
 	}
 
 	@media screen and (max-width:1440px) {
 		justify-content: start;
-		gap: 109px;
+		gap: calc(109 / 1440 * 100%);
 	}
 }
 
@@ -49,14 +50,22 @@
 
 .footer__address {
 	display: inline-block;
-	margin-top: 39px;
 	margin-right: 16px;
+	
+	&:first-child {
+		margin-top: 39px;
+	}
+
+	@media screen and (max-width:1200px) {
+		line-height: 1.5;
+	}
 
 	@include mq(lg) {
 		display: block;
 		margin-top: 0;
 		margin-right: 0;
 		font-size: 12px;
+		line-height: 1;
 	}
 }
 
@@ -85,8 +94,29 @@
 	}
 }
 
+.address-term {
+	flex-shrink: 0;
+
+	@media screen and (max-width:1200px) {
+		line-height: 1.5;
+	}
+
+	@include mq(lg) {
+		line-height: 1;
+	}
+}
+
 .address-desc {
 	margin-left: 16px;
+	flex-shrink: 0;
+
+	@media screen and (max-width:1200px) {
+		line-height: 1.5;
+	}
+
+	@include mq(lg) {
+		line-height: 1;
+	}
 }
 
 .footer__nav {

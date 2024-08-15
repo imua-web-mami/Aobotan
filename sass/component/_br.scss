@@ -8,6 +8,18 @@
 	}
 }
 
+.middle-br {
+	display: none;
+
+	@media screen and (max-width:1200px) {
+		display: block;	
+	}
+
+	@include mq(lg) {
+		display: none;
+	}
+}
+
 .pc-br {
 	@include mq(lg) {
 		display: none;

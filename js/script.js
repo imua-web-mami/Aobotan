@@ -1,8 +1,29 @@
-// ヘッダーの高さ分だけコンテンツを下げる
+// loading
+
 $(function () {
-  const height = $(".js-header").height();
-  $("main").css("margin-top", height);
+  var webStorage = function () {
+    if (sessionStorage.getItem('access')) {
+      /*
+        2回目以降アクセス時の処理
+      */
+      $(".loading").addClass('is-active');
+    } else {
+      /*
+        初回アクセス時の処理
+      */
+      sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
+      $(".loading-animation").addClass('is-active'); // loadingアニメーションを表示
+      setTimeout(function () {
+        // ローディングを数秒後に非表示にする
+        $(".loading").addClass('is-active');
+        $(".loading-animation").removeClass('is-active');
+      }, 3000); // ローディングを表示する時間
+    }
+  }
+  webStorage();
 });
+
+
 // ページ内スクロール
 $(function () {
   // ヘッダーの高さ取得
@@ -18,34 +39,31 @@ $(function () {
   });
 });
 
-// loading
-
-// $(window).on('load',function(){
-//   $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
-//   $("#splash_logo").delay(1200).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト
-// });
+// 別ページにリンクで飛んでスクロール
 
 $(function () {
-  var webStorage = function () {
-    if (sessionStorage.getItem('access')) {
-      /*
-        2回目以降アクセス時の処理
-      */
-      $("#splash").addClass('is-active');
-    } else {
-      /*
-        初回アクセス時の処理
-      */
-      sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
-      $(".fadeUp").addClass('is-active'); // loadingアニメーションを表示
-      setTimeout(function () {
-        // ローディングを数秒後に非表示にする
-        $("#splash").addClass('is-active');
-        $(".fadeUp").removeClass('is-active');
-      }, 3000); // ローディングを表示する時間
-    }
+  var hash = location.hash;
+  if(hash) {
+    var target = $('[data-id="'+hash+'"]');//offset()を使うためjQueryオブジェクト化
+    if(!target.length) return;/* targetがなかったときはそれ以降の処理をしない */
+    // 移動先を数値で取得
+    $(window).on('load',function(){
+      history.replaceState('','','./');/* 再読み込みしたときにスムーススクロールしないようにhashを取り除く */
+
+      //loadの中に書くことで、画像を読み込んだ後に実行されるようになる
+      //loadの中に書かないと画像が読み込まれる前にoffset().topしてしまうため、正しい位置にならない
+      var position = target.offset().top;
+      //headerの高さ
+      var headerHeight = $('#header').innerHeight();
+
+
+      position = position - headerHeight;
+
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, 300, 'swing');
+
+    });
   }
-  webStorage();
 });
 
 // header アコーディオン
@@ -116,14 +134,27 @@ MicroModal.init({
 	disableScroll: true,
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-	MicroModal.init({
-		onShow: modal => {
-			// モーダルが表示されたときにスクロール位置をリセット
-			const modalContent = modal.querySelector('.modal__container');
-			if (modalContent) {
-				modalContent.scrollTop = 0;
-			}
-		}
-	});
+document.addEventListener('DOMContentLoaded', function() {
+  let scrollPosition = 0;
+
+  // モーダルが開かれた時の処理
+  function openModal() {
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.width = '100%';
+  }
+
+  // モーダルが閉じられた時の処理
+  function closeModal() {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollPosition);
+  }
+
+  // Micromodalのイベントリスナーを追加
+  MicroModal.init({
+      onShow: openModal, // モーダルが開かれた時にopenModalを実行
+      onClose: closeModal // モーダルが閉じられた時にcloseModalを実行
+  });
 });

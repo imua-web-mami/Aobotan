@@ -122,6 +122,20 @@ button {
   }
 }
 
+.middle-br {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .middle-br {
+    display: block;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .middle-br {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .pc-br {
     display: none;
@@ -277,55 +291,38 @@ button {
   filter: brightness(0) invert(1);
 }
 
-/* Loading背景画面設定　*/
-#splash {
-  /*fixedで全面に固定*/
+.loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #FFF;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background: #333;
-  text-align: center;
-  color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
 }
 
-#splash.is-active {
+.loading.is-active {
   opacity: 0;
   visibility: hidden;
 }
 
-/* Loading画像中央配置　*/
-#splash_logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Loading アイコンの大きさ設定　*/
-#splash_logo img {
-  width: 260px;
-}
-
-/* fadeUpをするアイコンの動き */
-.fadeUp {
-  animation-name: fadeUpAnime;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+.loading-animation {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #F8F8F8;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
+  visibility: hidden;
 }
 
-@keyframes fadeUpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fadeUp.is-active {
+.loading-animation.is-active {
   opacity: 1;
   visibility: visible;
 }
@@ -336,7 +333,7 @@ button {
 }
 @media screen and (max-width: 1024px) {
   .fv {
-    padding-top: 23px;
+    padding-top: 102px;
   }
 }
 
@@ -360,7 +357,7 @@ button {
   background: #4282B8;
   position: absolute;
   top: -40px;
-  right: -40px;
+  right: 0;
   z-index: -10;
 }
 @media screen and (max-width: 1024px) {
@@ -778,18 +775,19 @@ body.is-scroll {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-right: 40px;
+  padding-right: 20px;
 }
 @media screen and (max-width: 1024px) {
   .footer__inner {
     flex-direction: column;
     gap: 0;
+    padding-right: 0;
   }
 }
 @media screen and (max-width: 1440px) {
   .footer__inner {
     justify-content: start;
-    gap: 109px;
+    gap: 7.5694444444%;
   }
 }
 
@@ -811,8 +809,15 @@ body.is-scroll {
 
 .footer__address {
   display: inline-block;
-  margin-top: 39px;
   margin-right: 16px;
+}
+.footer__address:first-child {
+  margin-top: 39px;
+}
+@media screen and (max-width: 1200px) {
+  .footer__address {
+    line-height: 1.5;
+  }
 }
 @media screen and (max-width: 1024px) {
   .footer__address {
@@ -820,6 +825,7 @@ body.is-scroll {
     margin-top: 0;
     margin-right: 0;
     font-size: 12px;
+    line-height: 1;
   }
 }
 
@@ -849,8 +855,33 @@ body.is-scroll {
   }
 }
 
+.address-term {
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1200px) {
+  .address-term {
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .address-term {
+    line-height: 1;
+  }
+}
+
 .address-desc {
   margin-left: 16px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1200px) {
+  .address-desc {
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .address-desc {
+    line-height: 1;
+  }
 }
 
 .footer__nav {
@@ -929,7 +960,7 @@ body.is-scroll {
 }
 @media screen and (max-width: 1024px) {
   .main-visual {
-    padding-top: 23px;
+    padding-top: 102px;
   }
 }
 
@@ -1075,7 +1106,7 @@ body.is-scroll {
   .main-visual__catch {
     padding: 14px 13px;
     margin-left: 13px;
-    font-size: 24px;
+    font-size: clamp(24px, 6.4vw, 48px);
   }
 }
 
@@ -1217,6 +1248,7 @@ body.is-scroll {
     width: 112px;
     height: 284px;
     top: 116px;
+    left: auto;
     right: 27px;
   }
 }
@@ -1478,7 +1510,6 @@ body.is-scroll {
 .top-news {
   margin-top: 107px;
   padding-right: 40px;
-  line-height: 1;
 }
 @media screen and (max-width: 1024px) {
   .top-news {
@@ -1493,6 +1524,8 @@ body.is-scroll {
 
 .top-news__item {
   border-top: 1px solid #B1C6DC;
+}
+.top-news__item:last-child {
   border-bottom: 1px solid #B1C6DC;
 }
 
@@ -1546,6 +1579,7 @@ body.is-scroll {
   color: #4282B8;
   font-size: 14px;
   font-weight: bold;
+  line-height: 1;
 }
 
 .top-news__time {
@@ -1553,6 +1587,7 @@ body.is-scroll {
   color: #4282B8;
   font-size: 14px;
   font-weight: bold;
+  line-height: 1;
 }
 
 .top-news__sub-title {
@@ -1638,7 +1673,6 @@ body.is-scroll {
 .modal-title {
   margin-top: 21px;
   font-size: 24px;
-  line-height: 1.8;
   font-weight: bold;
 }
 @media screen and (max-width: 1024px) {
@@ -1658,20 +1692,8 @@ body.is-scroll {
      object-fit: contain;
 }
 
-.top-news__modal-text {
-  line-height: 1.8;
-}
-
 .top-news__modal-text + .top-news__modal-text {
   margin-top: 2rem;
-}
-
-#modal-0 {
-  display: none;
-}
-
-#modal-0.is-open {
-  display: block;
 }
 
 #modal-1 {
@@ -2063,6 +2085,7 @@ body.is-scroll {
     max-width: auto;
     width: calc(100% - 40px);
     margin-inline: 20px;
+    border-radius: 25px;
   }
 }
 .service__section-img img {
