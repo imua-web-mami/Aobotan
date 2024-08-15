@@ -12,7 +12,8 @@
 }
 
 .page-inner {
-  width: 953px;
+  max-width: 953px;
+  margin-right: 40px;
 
   @include mq(lg) {
     width: 100%;

@@ -36,8 +36,7 @@
 			width: 59px;
 			height: 86px;
 			top: -55px;
-			right: auto;
-			left: 296px;
+			right: 20px;
 		}
 	}
 }
@@ -53,7 +52,6 @@
 	flex-direction: row;
 
 	@include mq(lg) {
-		max-width: 335px;
 		margin: 47px auto 0 auto;
 		height: auto;
 		flex-direction: column;
@@ -89,7 +87,7 @@
 	}
 }
 
-.top-contact__contents-center {
+.top-contact__contents-number {
 	padding: 8px 32px 0 32px;
 	border-right: 1px solid $text-color;
 

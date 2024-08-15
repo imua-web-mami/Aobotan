@@ -12,7 +12,7 @@
 
 .about-philosophy__img-box {
 	margin-top: 64px;
-	width: 923px;
+	width: calc(923 / 1160 * 100%);
 	aspect-ratio: 923 / 519;
 	
 	@include mq(lg) {
@@ -39,7 +39,7 @@
 .about-company-overview__text-box {
 	display: flex;
 	flex-direction: row;
-	gap: 157px;
+	gap: calc(157 / 1440 * 100%);
 	margin-top: 64px;
 
 	@include mq(lg) {
@@ -50,7 +50,7 @@
 }
 
 .about-company-overview__text {
-	width: 465px;
+	width: calc(465 / 1440 * 100vw);
 
 	@include mq(lg) {
 		width: 100%;
@@ -61,6 +61,22 @@
 
 	@include mq(lg) {
 		text-align: center;
+	}
+}
+
+.about-company-overview__img {
+	width: calc(331 / 1440 * 100vw);
+	aspect-ratio: 331 / 425;
+	max-width: 331px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	@include mq(lg) {
+		margin-inline: auto;
 	}
 }
 
@@ -93,7 +109,6 @@
 .about-company-overview__th,
 .about-company-overview__td {
 	padding: 30px 0;
-	line-height: 1;
 
 	@include mq(lg) {
 		padding: 22px 0;
@@ -150,6 +165,7 @@
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	margin-top: 31px;
+	gap: 44px;
 
 	@include mq(lg) {
 		flex-direction: column;
