@@ -1,0 +1,40 @@
+@use "../../global/forward" as*;
+
+.thanks-page .contact__item {
+	background: $white;
+	color: $main-color;
+	border: 3px solid $main-color;
+
+	&:nth-child(2) {
+		background: $main-color;
+		color: $white;
+	}
+}
+
+.thanks__link-box {
+	margin-top: 46px;
+}
+
+.btn-more.thanks-btn {
+	width: 284px;
+	background: $main-color;
+	color: $white;
+	border: 1px solid $main-color;
+
+	&::after {
+		background: $white;
+	}
+
+	&:hover {
+		background: $white;
+		color: $main-color;
+
+		&::after {
+			background: $main-color;
+		}
+	}
+}
+
+.thanks-page .top-contact {
+	margin-top: 170px;
+}

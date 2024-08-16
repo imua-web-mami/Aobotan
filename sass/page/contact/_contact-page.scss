@@ -14,7 +14,11 @@
 	margin-top: 62px;
 	display: flex;
 	flex-direction: row;
-	gap: 150px;
+	gap: 72px;
+
+	@include mq(lg) {
+		flex-direction: column;
+	}
 }
 
 .contact__list {
@@ -31,6 +35,10 @@
 	text-align: center;
 	position: relative;
 
+	@include mq(lg) {
+		width: 138px;
+	}
+
 	&::before {
 		content: counter(mycounter, decimal-leading-zero);
 		display: block;
@@ -45,6 +53,10 @@
 		border: 3px solid $main-color;
 		margin-left: 52px;
 
+		@include mq(lg) {
+			margin-left: 32px;
+		}
+
 		&::after {
 			content: "";
 			width: 52px;
@@ -53,6 +65,11 @@
 			position: absolute;
 			top: 50%;
 			left: -54px;
+
+			@include mq(lg) {
+				width: 32px;
+				left: -34px;
+			}
 		}
 	}
 }
@@ -63,6 +80,10 @@
 
 .contact__tel-text {
 	font-weight: bold;
+
+	@include mq(lg) {
+		font-size: 14px;
+	}
 }
 
 .contact__tel-number {
@@ -71,18 +92,30 @@
 	font-size: 32px;
 	font-family: "Kanit", sans-serif;
 	color: $text-color;
+
+	@include mq(lg) {
+		font-size: 24px;
+	}
 }
 
 .contact__b-hours {
 	margin-top: 14px;
 	font-size: 12px;
 	font-weight: bold;
+
+	@include mq(lg) {
+		font-size: 10px;
+	}
 }
 
 .contact-form {
 	margin-top: 17px;
 	line-height: 1;
 	font-weight: bold;
+
+	@include mq(lg) {
+		margin-top: 72px;
+	}
 }
 
 .form__item {
@@ -121,6 +154,11 @@ sup {
 	margin-top: 27px;
 	background: $bg-color;
 	border: 1px solid $accent-color;
+	padding: 0 16px;
+
+	@include mq(lg) {
+		width: 300px;
+	}
 }
 
 ::placeholder {
@@ -135,8 +173,16 @@ sup {
 	flex-direction: row;
 	gap: 40px;
 
+	@include mq(lg) {
+		gap: 20px;
+	}
+
 	.form__text {
 		width: 215px;
+
+		@include mq(lg) {
+			width: 140px;
+		}
 	}
 }
 
@@ -144,21 +190,62 @@ sup {
 	margin-top: 51px;
 	font-weight: normal;
 	margin-left: 71px;
+
+	@include mq(lg) {
+		margin-top: 32px;
+		margin-left: 0;
+	}
 }
 
 .form__item-btn {
 	margin-top: 69px;
+	margin-left: 92px;
+
+	@include mq(lg) {
+		text-align: left;
+		margin-top: 24px;
+		margin-left: 0;
+	}
 }
 
 .form__input-check {
-	border: 1px solid $main-color;
+	appearance: none;
+	margin: 0;
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $main-color;
+  background-color: #fff;
+  position: relative;
+  top: -2px;
+	transition: .3s;
 }
 
-.form__item-btn {
-	margin-left: 92px;
+.form__input-check:checked {
+  border-color: $bg-color;
+  background-color: $main-color;
+	position: relative;
 }
 
-.submit-btn {
+.form__input-check:checked::after {
+	display: block;
+position: absolute;
+content: "";
+width: 7px;
+height:3px;
+border-bottom: 3px solid;
+border-left: 3px solid;
+border-color:  $white;
+transform: rotate(-45deg);
+top: 50%;
+left: 2px;
+margin-top: -4px;
+}
+
+.submit-btn.btn-more {
 	width: 284px;
 	background: $main-color;
 	color: $white;

@@ -159,3 +159,22 @@ document.addEventListener('DOMContentLoaded', function() {
       onClose: closeModal // モーダルが閉じられた時にcloseModalを実行
   });
 });
+
+// form 全て入力したら有効にする
+
+// $(document).ready(function () {
+
+//   const $submitBtn = $('#js-submit');
+//   const $form = $('#ContactForm');
+
+//   $form.find('input').on('change', function () {
+//     const allFilled = $form.find('input[type="radio"]').val() !== "" &&
+//                       $form.find('input[type="text"]').val() !== "" &&
+//                       $form.find('input[type="email"]').val() !== "" &&
+//                       $form.find('input[type="tel"]').val() !== "" &&
+//                       $form.find('#input-check').prop('checked') === true;
+
+//     $submitBtn.prop('disabled', !allFilled);
+//   });
+
+// });
