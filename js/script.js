@@ -40,31 +40,32 @@ $(function () {
 });
 
 // 別ページにリンクで飛んでスクロール
+// ハッシュを取得
+var urlHash = location.hash;
+// ハッシュが存在する時
+if (urlHash) {
+  // スクロール先を取得
+  var target = jQuery(urlHash);
+  // スクロール先が存在する時
+  if (target.length) {
+    // ページトップから開始（ブラウザ差異を考慮して併用）
+    history.replaceState(null, '', window.location.pathname); // ハッシュを削除
+    jQuery("html,body").stop().scrollTop(0); // ページトップへジャンプ
 
-$(function () {
-  var hash = location.hash;
-  if(hash) {
-    var target = $('[data-id="'+hash+'"]');//offset()を使うためjQueryオブジェクト化
-    if(!target.length) return;/* targetがなかったときはそれ以降の処理をしない */
-    // 移動先を数値で取得
-    $(window).on('load',function(){
-      history.replaceState('','','./');/* 再読み込みしたときにスムーススクロールしないようにhashを取り除く */
+    // ページを読み込んで処理
+    jQuery(window).on("load", function () {
+      // ヘッダーの高さを取得
+      var headerHeight = jQuery("header").outerHeight();
+      // スクロール先の位置を計算（ヘッダーと任意の高さを引く）
+      var position = target.offset().top - headerHeight - 20;
+      // スクロール実行（500ミリ秒、swing指定）
+      jQuery("html, body").animate({ scrollTop: position }, 500, "swing");
 
-      //loadの中に書くことで、画像を読み込んだ後に実行されるようになる
-      //loadの中に書かないと画像が読み込まれる前にoffset().topしてしまうため、正しい位置にならない
-      var position = target.offset().top;
-      //headerの高さ
-      var headerHeight = $('#header').innerHeight();
-
-
-      position = position - headerHeight;
-
-      // スムーススクロール
-      $('body,html').animate({scrollTop:position}, 300, 'swing');
-
+      // ハッシュを再設定
+      history.replaceState(null, '', window.location.pathname + urlHash);
     });
   }
-});
+}
 
 // header アコーディオン
 

@@ -107,6 +107,9 @@
 
 	@include mq(lg) {
 		margin-top: 26px;
+	}
+	
+	@include mq(md) {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -114,10 +117,9 @@
 
 .service-contents__ex-item {
 	max-width: 352px;
-	width: calc(352 / 1440 * 100vw);
 
 	@include mq(lg) {
-		width: 267px;
+		width: 312px;
 	}
 }
 
