@@ -45,7 +45,7 @@
 		font-size: 12px;
 	}
 
-	
+
 
 	&:nth-child(2) {
 		background: $white;
@@ -143,7 +143,7 @@ sup {
 	display: block;
 }
 
-.form__radio + .form__radio {
+.form__radio+.form__radio {
 	margin-top: 14px;
 }
 
@@ -211,38 +211,38 @@ sup {
 .form__input-check {
 	appearance: none;
 	margin: 0;
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $main-color;
-  background-color: #fff;
-  position: relative;
-  top: -2px;
+	margin-right: 8px;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $main-color;
+	background-color: #fff;
+	position: relative;
+	top: -2px;
 	transition: .3s;
 }
 
 .form__input-check:checked {
-  border-color: $bg-color;
-  background-color: $main-color;
+	border-color: $bg-color;
+	background-color: $main-color;
 	position: relative;
 }
 
 .form__input-check:checked::after {
 	display: block;
-position: absolute;
-content: "";
-width: 7px;
-height:3px;
-border-bottom: 3px solid;
-border-left: 3px solid;
-border-color:  $white;
-transform: rotate(-45deg);
-top: 50%;
-left: 2px;
-margin-top: -4px;
+	position: absolute;
+	content: "";
+	width: 7px;
+	height: 3px;
+	border-bottom: 3px solid;
+	border-left: 3px solid;
+	border-color: $white;
+	transform: rotate(-45deg);
+	top: 50%;
+	left: 2px;
+	margin-top: -4px;
 }
 
 .submit-btn.btn-more {
@@ -250,18 +250,21 @@ margin-top: -4px;
 	background: $main-color;
 	color: $white;
 	border: none;
+	opacity: 0.2;
+	cursor: default;
 
 	&::after {
 		background: $white;
 	}
 
 	&:hover {
-		background: $white;
-		color: $main-color;
-		border: 1px solid $main-color;
+		opacity: 0.2;
 
 		&::after {
-			background: $main-color;
+			width: 10px;
+			height: 10px;
+			top: 25px;
+			right: 25px;
 		}
 	}
 }

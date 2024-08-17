@@ -2504,17 +2504,20 @@ sup {
   background: #4282B8;
   color: #fff;
   border: none;
+  opacity: 0.2;
+  cursor: default;
 }
 .submit-btn.btn-more::after {
   background: #fff;
 }
 .submit-btn.btn-more:hover {
-  background: #fff;
-  color: #4282B8;
-  border: 1px solid #4282B8;
+  opacity: 0.2;
 }
 .submit-btn.btn-more:hover::after {
-  background: #4282B8;
+  width: 10px;
+  height: 10px;
+  top: 25px;
+  right: 25px;
 }
 
 .contact-page .top-contact {

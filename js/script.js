@@ -162,19 +162,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // form 全て入力したら有効にする
 
-// $(document).ready(function () {
+// form 全て入力したら送信ボタンを機能させる
 
-//   const $submitBtn = $('#js-submit');
-//   const $form = $('#ContactForm');
+document.addEventListener("DOMContentLoaded", function() {
+  const contactForm = document.getElementById("contactForm");
+  const submitButton = document.getElementById("js-submit");
 
-//   $form.find('input').on('change', function () {
-//     const allFilled = $form.find('input[type="radio"]').val() !== "" &&
-//                       $form.find('input[type="text"]').val() !== "" &&
-//                       $form.find('input[type="email"]').val() !== "" &&
-//                       $form.find('input[type="tel"]').val() !== "" &&
-//                       $form.find('#input-check').prop('checked') === true;
+  contactForm.addEventListener("input", function() {
+    update(contactForm, submitButton);
+  });
 
-//     $submitBtn.prop('disabled', !allFilled);
-//   });
-
-// });
+  function update(form, button) {
+    const isRequired = form.checkValidity();
+    if (isRequired) {
+      button.style.opacity = 1;
+      button.style.cursor = "pointer";
+    } else {
+      button.style.opacity = 0.2;
+      button.style.cursor = "default";
+    }
+  }
+});
