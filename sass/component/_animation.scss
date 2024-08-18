@@ -1,0 +1,43 @@
+@use "../global/forward" as*;
+
+.fadeUp {
+	animation-name: fadeUpAnime;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeIn {
+	animation-name: fadeInAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+@keyframes fadeInAnime {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.delay-time04 {
+	animation-delay: 0.4s;
+}
