@@ -7,6 +7,7 @@ $(function () {
         2回目以降アクセス時の処理
       */
       $(".loading").addClass('is-active');
+      delayScrollAnime();
     } else {
       /*
         初回アクセス時の処理
@@ -17,7 +18,8 @@ $(function () {
         // ローディングを数秒後に非表示にする
         $(".loading").addClass('is-active');
         $(".loading-animation").removeClass('is-active');
-      }, 3000); // ローディングを表示する時間
+        delayScrollAnime();
+      }, 2000); // ローディングを表示する時間
     }
   }
   webStorage();
@@ -70,44 +72,44 @@ if (urlHash) {
 // header アコーディオン
 
 $(document).ready(function () {
-	// 初期状態で全てのサブメニューを非表示にする
-	$('.accodion .menu>li').find('ul').hide();
+  // 初期状態で全てのサブメニューを非表示にする
+  $('.accodion .menu>li').find('ul').hide();
 
-	// アコーディオンのタイトルをホバーした時の処理
-	$('.accodion .menu>li').hover(function () {
-			var parentLi = $(this).closest('li');
-			// サブメニューを開いてopenクラスを追加
-			parentLi.children('.sub-menu').stop().slideDown(500);
-			parentLi.addClass('open');
-	}, function () {
-			// サブメニューを閉じてopenクラスを削除
-			var parentLi = $(this).closest('li');
-			parentLi.children('.sub-menu').stop().slideUp(500);
-			parentLi.removeClass('open');
-	});
+  // アコーディオンのタイトルをホバーした時の処理
+  $('.accodion .menu>li').hover(function () {
+    var parentLi = $(this).closest('li');
+    // サブメニューを開いてopenクラスを追加
+    parentLi.children('.sub-menu').stop().slideDown(500);
+    parentLi.addClass('open');
+  }, function () {
+    // サブメニューを閉じてopenクラスを削除
+    var parentLi = $(this).closest('li');
+    parentLi.children('.sub-menu').stop().slideUp(500);
+    parentLi.removeClass('open');
+  });
 });
 
 // header g-nav
 
 $(".menu-btn").click(function () {//ボタンがクリックされたら
-	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-	$(".g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-	$("body").toggleClass("is-scroll");
+  $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+  $(".g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+  $("body").toggleClass("is-scroll");
 });
 
 $(".g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-	$(".menu-btn").removeClass('active');//ボタンの activeクラスを除去し
-	$(".g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
-	$("body").removeClass("is-scroll");
+  $(".menu-btn").removeClass('active');//ボタンの activeクラスを除去し
+  $(".g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+  $("body").removeClass("is-scroll");
 });
 
 // resizeイベント
-$(window).on('resize', function() {
-	if (window.matchMedia("(min-width: 820px)").matches) {
-			$(".menu-btn").removeClass("active");
-			$(".g-nav").removeClass("panelactive");
-			$("body").removeClass("is-scroll");
-	}
+$(window).on('resize', function () {
+  if (window.matchMedia("(min-width: 820px)").matches) {
+    $(".menu-btn").removeClass("active");
+    $(".g-nav").removeClass("panelactive");
+    $("body").removeClass("is-scroll");
+  }
 });
 
 // about swiperスライドショー
@@ -115,7 +117,7 @@ $(window).on('resize', function() {
 const swiper = new Swiper(".swiper", {
   loop: true, // ループ有効
   slidesPerView: 'auto', // 一度に表示する枚数
-	spaceBetween: 16,
+  spaceBetween: 16,
   speed: 6000, // ループの時間
   allowTouchMove: false, // スワイプ無効
   autoplay: {
@@ -131,43 +133,43 @@ const swiper = new Swiper(".swiper", {
 // News モーダル
 
 MicroModal.init({
-	openClass: 'is-open',
-	disableScroll: true,
+  openClass: 'is-open',
+  disableScroll: true,
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let scrollPosition = 0;
 
   // モーダルが開かれた時の処理
   function openModal() {
-      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollPosition}px`;
-      document.body.style.width = '100%';
+    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
   }
 
   // モーダルが閉じられた時の処理
   function closeModal() {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      window.scrollTo(0, scrollPosition);
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
   }
 
   // Micromodalのイベントリスナーを追加
   MicroModal.init({
-      onShow: openModal, // モーダルが開かれた時にopenModalを実行
-      onClose: closeModal // モーダルが閉じられた時にcloseModalを実行
+    onShow: openModal, // モーダルが開かれた時にopenModalを実行
+    onClose: closeModal // モーダルが閉じられた時にcloseModalを実行
   });
 });
 
 
 // form 全て入力したら送信ボタンを機能させる
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const contactForm = document.getElementById("contactForm");
   const submitButton = document.getElementById("js-submit");
 
-  contactForm.addEventListener("input", function() {
+  contactForm.addEventListener("input", function () {
     update(contactForm, submitButton);
   });
 
@@ -187,60 +189,60 @@ document.addEventListener("DOMContentLoaded", function() {
 // fadeUpアニメーション
 
 function delayScrollAnime() {
-	var time = 0.2;//遅延時間を増やす秒数の値
-	var value = time;
-	$('.delayScroll').each(function () {
-		var parent = this;					//親要素を取得
-		var elemPos = $(this).offset().top;//要素の位置まで来たら
-		var scroll = $(window).scrollTop();//スクロール値を取得
-		var windowHeight = $(window).height();//画面の高さを取得
-		var childs = $(this).children();	//子要素を取得
-		
-		if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {//指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
-			$(childs).each(function () {
-				
-				if (!$(this).hasClass("fadeUp")) {//アニメーションのクラス名が指定されているかどうかをチェック
-					
-					$(parent).addClass("play");	//親要素にクラス名playを追加
-					$(this).css("animation-delay", value + "s");//アニメーション遅延のCSS animation-delayを追加し
-					$(this).addClass("fadeUp");//アニメーションのクラス名を追加
-					value = value + time;//delay時間を増加させる
-					
-					//全ての処理を終わったらplayを外す
-					var index = $(childs).index(this);
-					if((childs.length-1) == index){
-						$(parent).removeClass("play");
-					}
-				}
-			})
-		}else {
-			$(childs).removeClass("fadeUp");//アニメーションのクラス名を削除
-			value = time;//delay初期値の数値に戻す
-		}
-	})
+  var time = 0.2;//遅延時間を増やす秒数の値
+  var value = time;
+  $('.delayScroll').each(function () {
+    var parent = this;					//親要素を取得
+    var elemPos = $(this).offset().top;//要素の位置まで来たら
+    var scroll = $(window).scrollTop();//スクロール値を取得
+    var windowHeight = $(window).height();//画面の高さを取得
+    var childs = $(this).children();	//子要素を取得
+
+    if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {//指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
+      $(childs).each(function () {
+
+        if (!$(this).hasClass("fadeUp")) {//アニメーションのクラス名が指定されているかどうかをチェック
+
+          $(parent).addClass("play");	//親要素にクラス名playを追加
+          $(this).css("animation-delay", value + "s");//アニメーション遅延のCSS animation-delayを追加し
+          $(this).addClass("fadeUp");//アニメーションのクラス名を追加
+          value = value + time;//delay時間を増加させる
+
+          //全ての処理を終わったらplayを外す
+          var index = $(childs).index(this);
+          if ((childs.length - 1) == index) {
+            $(parent).removeClass("play");
+          }
+        }
+      })
+    } else {
+      $(childs).removeClass("fadeUp");//アニメーションのクラス名を削除
+      value = time;//delay初期値の数値に戻す
+    }
+  })
 }
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', function(){
+$(window).on('load', function () {
   delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
 });
 
 // fadeInアニメーション
 
 function slideAnime() {
-	$('.js-fadeIn').each(function () { //js-fadeInというクラス名が
-		var elemPos = $(this).offset().top - 50;//要素より、50px上の
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		if (scroll >= elemPos - windowHeight) {
-			$(this).addClass('fadeIn');// 画面内に入ったらfadeInというクラス名を追記
-		} else {
-			$(this).removeClass('fadeIn');// 画面外に出たらfadeInというクラス名を外す
-		}
-	});
+  $('.js-fadeIn').each(function () { //js-fadeInというクラス名が
+    var elemPos = $(this).offset().top - 50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('fadeIn');// 画面内に入ったらfadeInというクラス名を追記
+    } else {
+      $(this).removeClass('fadeIn');// 画面外に出たらfadeInというクラス名を外す
+    }
+  });
 }
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
-	slideAnime();/* アニメーション用の関数を呼ぶ*/
+  slideAnime();/* アニメーション用の関数を呼ぶ*/
 });
