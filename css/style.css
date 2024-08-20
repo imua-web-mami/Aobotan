@@ -178,6 +178,7 @@ button {
 }
 @media screen and (max-width: 1024px) {
   .section-title-en {
+    margin-top: 16px;
     font-size: 72px;
   }
 }
@@ -546,8 +547,9 @@ body.is-scroll {
   .header__logo {
     width: 98px;
     height: 59px;
+    aspect-ratio: 98/59;
     margin: 0;
-    padding-top: 10px;
+    margin-top: 10px;
   }
 }
 .header__logo img {
@@ -732,7 +734,6 @@ body.is-scroll {
   color: #000000;
   display: block;
   padding: 16px 0;
-  letter-spacing: 0.1em;
   font-weight: bold;
   transition: 0.3s;
 }
@@ -747,8 +748,25 @@ body.is-scroll {
   vertical-align: text-bottom;
 }
 
+.g-nav-item-contact {
+  position: relative;
+}
+
+.g-nav-item-contact::before {
+  content: "";
+  background: url(/img/mail-icon.png);
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 14px;
+  left: 4px;
+}
+
 .g-nav-small {
   margin-top: 10px;
+  font-size: 12px;
+  line-height: 1;
 }
 
 /*========= ボタンのためのCSS ===============*/
@@ -1035,7 +1053,7 @@ body.is-scroll {
 .main-visual__contents::before {
   content: "";
   display: block;
-  width: 62.6724137931%;
+  width: 50.4861111111vw;
   aspect-ratio: 1/1;
   background: #4282B8;
   position: absolute;
@@ -1136,7 +1154,7 @@ body.is-scroll {
 .top-main-visual__text-box {
   position: absolute;
   bottom: 7.2164948454%;
-  right: 11.3392857143%;
+  right: 10.0892857143%;
 }
 @media screen and (max-width: 1024px) {
   .top-main-visual__text-box {
@@ -1151,7 +1169,6 @@ body.is-scroll {
   background: #fff;
   border-radius: 10px;
   padding: 14px;
-  margin-left: 14px;
   font-size: 64px;
   font-weight: bold;
   line-height: 1;
@@ -1159,13 +1176,12 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .main-visual__catch {
     padding: 14px 13px;
-    margin-left: 13px;
     font-size: clamp(24px, 6.4vw, 48px);
   }
 }
 
 .main-visual__text {
-  margin-top: 35px;
+  margin-top: 21px;
   font-weight: bold;
   line-height: 2;
 }
@@ -1180,6 +1196,7 @@ body.is-scroll {
   color: #4282B8;
   font-size: 10px;
   font-weight: bold;
+  line-height: 1;
   position: absolute;
   bottom: 64px;
   left: 18px;
@@ -1201,7 +1218,7 @@ body.is-scroll {
   height: 112px;
   background: #4282B8;
   position: absolute;
-  left: 50%;
+  left: 22.5px;
   bottom: -120px;
   animation: scrollAnimation 2.4s ease-out infinite;
 }
@@ -1332,7 +1349,7 @@ body.is-scroll {
 
 .top-about__catch {
   height: 100%;
-  padding-top: 16px;
+  padding-top: 28px;
   writing-mode: vertical-rl;
   font-size: 40px;
   font-weight: bold;
@@ -1341,6 +1358,7 @@ body.is-scroll {
 }
 @media screen and (max-width: 1024px) {
   .top-about__catch {
+    padding-top: 24px;
     font-size: 24px;
   }
 }
@@ -1371,8 +1389,8 @@ body.is-scroll {
 .top-service {
   margin-top: 85px;
   height: auto;
-  position: relative;
   padding: 49px 0 100px 0;
+  position: relative;
 }
 @media screen and (max-width: 1024px) {
   .top-service {
@@ -1409,14 +1427,14 @@ body.is-scroll {
   width: 124px;
   aspect-ratio: 124/172;
   position: absolute;
-  top: 93px;
+  top: 44px;
   right: 60px;
 }
 @media screen and (max-width: 1024px) {
   .top-service__inner::before {
     width: 69px;
     aspect-ratio: 69/96;
-    top: -48px;
+    top: -74px;
     right: 20px;
   }
 }
@@ -1438,7 +1456,7 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .top-service__item {
     flex-direction: column;
-    gap: 34px;
+    gap: 24px;
   }
 }
 .top-service__item:nth-child(even) {
@@ -1549,7 +1567,7 @@ body.is-scroll {
 }
 @media screen and (max-width: 1024px) {
   .top-service__text {
-    margin-top: 26px;
+    margin-top: 16px;
   }
 }
 

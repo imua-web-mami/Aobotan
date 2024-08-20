@@ -3,8 +3,8 @@
 .top-service {
 	margin-top: 85px;
 	height: auto;
-	position: relative;
 	padding: 49px 0 100px 0;
+	position: relative;
 
 	@include mq(lg) {
 		margin-top: 52px;
@@ -40,13 +40,13 @@
 		width: 124px;
 		aspect-ratio: 124 / 172;
 		position: absolute;
-		top: 93px;
+		top: 44px;
 		right: 60px;
 
 		@include mq(lg) {
 			width: 69px;
 			aspect-ratio: 69 / 96;
-			top: -48px;
+			top: -74px;
 			right: 20px;
 		}
 	}
@@ -67,7 +67,7 @@
 
 	@include mq(lg) {
 		flex-direction: column;
-		gap: 34px;
+		gap: 24px;
 	}
 
 	&:nth-child(even) {
@@ -172,7 +172,7 @@
 	margin-top: 48px;
 
 	@include mq(lg) {
-		margin-top: 26px;
+		margin-top: 16px;
 	}
 }
 

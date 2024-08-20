@@ -37,8 +37,9 @@
 	@include mq(lg) {
 		width: 98px;
 		height: 59px;
+		aspect-ratio: 98 / 59;
 		margin: 0;
-		padding-top: 10px;
+		margin-top: 10px;
 	}
 
 	img {
@@ -226,7 +227,6 @@
 	color: $text-color;
 	display: block;
 	padding: 16px 0;
-	letter-spacing: 0.1em;
 	font-weight: bold;
 	transition: .3s;
 
@@ -242,8 +242,25 @@
 	vertical-align: text-bottom;
 }
 
+.g-nav-item-contact {
+	position: relative;
+}
+
+.g-nav-item-contact::before {
+	content: "";
+	background: url(/img/mail-icon.png);
+	background-size: contain;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 14px;
+	left: 4px;
+}
+
 .g-nav-small {
 	margin-top: 10px;
+	font-size: 12px;
+	line-height: 1;
 }
 
 /*========= ボタンのためのCSS ===============*/
