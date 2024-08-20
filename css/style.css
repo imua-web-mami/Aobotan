@@ -974,6 +974,10 @@ body.is-scroll {
   }
 }
 
+.footer__nav-item:nth-of-type(3) {
+  margin-right: 150px;
+}
+
 .footer__nav-contact a {
   position: relative;
   padding-left: 28px;

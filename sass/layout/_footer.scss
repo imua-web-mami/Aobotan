@@ -150,12 +150,17 @@
 	}
 }
 
+
 .footer__nav-item:not(:last-child) {
 	margin-right: 24px;
-
+	
 	@include mq(lg) {
 		margin-right: 0;
 	}
+}
+
+.footer__nav-item:nth-of-type(3) {
+	margin-right: 150px;
 }
 
 .footer__nav-contact {
