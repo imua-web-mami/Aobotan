@@ -18,8 +18,10 @@ $(function () {
         // ローディングを数秒後に非表示にする
         $(".loading").addClass('is-active');
         $(".loading-animation").removeClass('is-active');
-        delayScrollAnime();
-      }, 2000); // ローディングを表示する時間
+      }, 1200); // ローディングを表示する時間
+      $(".loading").on('transitionend', function () { // ローディングが終了したら
+        delayScrollAnime(); // FVアニメーションを実行
+      });
     }
   }
   webStorage();
@@ -165,26 +167,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // form 全て入力したら送信ボタンを機能させる
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const contactForm = document.getElementById("contactForm");
+//   const submitButton = document.getElementById("js-submit");
+
+//   contactForm.addEventListener("input", function () {
+//     update(contactForm, submitButton);
+//   });
+
+//   function update(form, button) {
+//     const isRequired = form.checkValidity();
+//     if (isRequired) {
+//       button.classList.add('active');
+//     } else {
+//       button.classList.remove('active');
+//     }
+//   }
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
   const contactForm = document.getElementById("contactForm");
   const submitButton = document.getElementById("js-submit");
 
-  contactForm.addEventListener("input", function () {
-    update(contactForm, submitButton);
-  });
+  if (contactForm) { // フォームがページ内に存在するか確認
+    contactForm.addEventListener("input", function () {
+      update(contactForm, submitButton);
+    });
 
-  function update(form, button) {
-    const isRequired = form.checkValidity();
-    if (isRequired) {
-      button.style.opacity = 1;
-      button.style.cursor = "pointer";
-    } else {
-      button.style.opacity = 0.2;
-      button.style.cursor = "default";
+    function update(form, button) {
+      const isRequired = form.checkValidity();
+      if (isRequired) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
     }
   }
 });
 
+// 送信制御
+var submitted = false;
+
+// iframeを動的に生成して設定
+var iframe = document.createElement('iframe');
+iframe.name = 'hidden_iframe';
+iframe.id = 'hidden_iframe';
+iframe.style.display = 'none';
+
+// onloadイベントリスナーを追加
+iframe.onload = function() {
+    if (submitted) {
+        window.location.href = '/thanks';
+    }
+};
+
+// iframeをドキュメントに追加
+document.body.appendChild(iframe);
 
 // fadeUpアニメーション
 
@@ -221,11 +259,6 @@ function delayScrollAnime() {
     }
   })
 }
-
-// 画面が読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', function () {
-  delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
-});
 
 // fadeInアニメーション
 

@@ -53,7 +53,7 @@
 					</ul>
 				</li>
 				<li class="header__nav-item"><a href="/#top-news">お知らせ</a></li>
-				<li class="header__nav-item header__nav-contact"><a href="#contact-intro">お問い合わせ</a>
+				<li class="header__nav-item header__nav-contact"><a href="/contact">お問い合わせ</a>
 				</li>
 			</ul>
 		</nav>
@@ -72,17 +72,17 @@
 				<li class="g-nav-item"><a href="/service/#service-corporation">法人新築・リフォーム</a></li>
 				<li class="g-nav-item"><a href="/service/#service-infrastructure">公共工事</a></li>
 				<li class="g-nav-item"><a href="/#top-news">お知らせ</a></li>
-				<li class="g-nav-item"><a href="#contact-intro"><img src="../img/mail-icon.png" alt="">お問い合わせ</a></li>
+				<li class="g-nav-item"><a href="/contact"><img src="../img/mail-icon.png" alt="">お問い合わせ</a></li>
 				<li class="g-nav-small"><small>&copy; AOBOTAN INC.</small></li>
 			</ul>
 		</nav>
 	</header>
 	<main class="main contact-page" id="contact-page">
-		<section class="fv">
+		<div class="fv">
 			<figure class="fv-box">
 				<img src="../img/contact-fv.jpg" alt="">
 			</figure>
-		</section>
+		</div>
 		<section class="intro" id="contact-intro" data-id="#contact-intro">
 			<div class="page-inner">
 				<h2 class="h2-title">
@@ -104,63 +104,67 @@
 						<p class="contact__tel-text">
 							お電話も受け付けています。
 						</p>
-						<p><a class="contact__tel-number" href="tel:00000000000">0000-000-0000</a></p>
+						<p class="contact__tel-number"><a class="contact__tel-number-link" href="tel:00000000000">0000-000-0000</a>
+						</p>
 						<p class="contact__b-hours">
 							営業時間10:00-20:00
 						</p>
 					</div>
 				</div>
-			</div>
-		</section>
-		<section class="contact-form" id="contact-form">
-			<div class="page-inner">
-				<form method="post" class="contact__form"	id="contactForm" target="hidden_iframe" onsubmit="submitted=true;">
+				<form method="post" class="contact__form" id="contactForm" target="hidden_iframe" onsubmit="submitted=true;">
 					<ul class="form__list">
 						<li class="form__item">
-							<label for="kinds" class="form__label">
-								お問い合わせの種類<span><sup>★</sup>必須</span>
-							</label>
+							<p>
+								お問い合わせの種類<span class="label-small"><sup>★</sup>必須</span>
+							</p>
 							<div class="form__radio-box">
-								<label class="form__radio"><input type="radio" name="kinds" value="注文住宅の相談">注文住宅の相談</label>
-								<label class="form__radio"><input type="radio" name="kinds" value="法人建築の相談">法人建築の相談</label>
-								<label class="form__radio"><input type="radio" name="kinds" value="リフォームの相談">リフォームの相談</label>
-								<label class="form__radio"><input type="radio" name="kinds" value="公共工事の相談">公共工事の相談</label>
-								<label class="form__radio"><input type="radio" name="kinds" value="その他">その他</label>
+								<label class="form__radio"><input type="radio" name="kinds" value="注文住宅の相談" class="form__radio-button"
+										checked>注文住宅の相談</label>
+								<label class="form__radio"><input type="radio" name="kinds" value="法人建築の相談"
+										class="form__radio-button">法人建築の相談</label>
+								<label class="form__radio"><input type="radio" name="kinds" value="リフォームの相談"
+										class="form__radio-button">リフォームの相談</label>
+								<label class="form__radio"><input type="radio" name="kinds" value="公共工事の相談"
+										class="form__radio-button">公共工事の相談</label>
+								<label class="form__radio"><input type="radio" name="kinds" value="その他"
+										class="form__radio-button">その他</label>
 							</div>
 						</li>
 						<li class="form__item">
-							<label for="name" class="form__label">お名前<span><sup>★</sup>必須</span>
-							</label>
+							<label for="family-name" class="form__label">お名前<span class="label-small"><sup>★</sup>必須</span></label>
 							<div class="form__name-box">
-								<input type="text" id="last-name" autocomplete="family-name" class="form__text" placeholder="青牡丹"
-									required>
-								<input type="text" id="first-name" autocomplete="given-name" class="form__text" placeholder="幸太郎"
-									required>
+								<label for="family-name" class="visually-hidden">姓</label>
+								<input type="text" id="family-name" name="family-name" autocomplete="family-name" class="form__text"
+									placeholder="青牡丹" required>
+
+								<label for="given-name" class="visually-hidden">名</label>
+								<input type="text" id="given-name" name="given-name" autocomplete="given-name" class="form__text"
+									placeholder="幸太郎" required>
 							</div>
 						</li>
 						<li class="form__item">
 							<label for="email" class="form__label">
-								メールアドレス<span><sup>★</sup>必須</span>
+								メールアドレス<span class="label-small"><sup>★</sup>必須</span>
 							</label>
-							<input type="email" id="email" autocomplete="email" class="form__text" placeholder="aobotan@gmail.com"
+							<input type="email" id="email" name="email" autocomplete="email" class="form__text"
+								placeholder="aobotan@gmail.com" required>
+						</li>
+						<li class="form__item">
+							<label for="tel" class="form__label">
+								電話番号<span class="label-small"><sup>★</sup>必須</span>
+							</label>
+							<input type="tel" id="tel" name="tel" autocomplete="tel" class="form__text" placeholder="000-0000-0000"
 								required>
 						</li>
 						<li class="form__item">
-							<label for="tel" class="form__label">
-								電話番号<span><sup>★</sup>必須</span>
+							<label for="address" class="form__label">
+								住所<span class="label-small"><sup>★</sup>必須</span>
 							</label>
-							<input type="tel" id="tel" name="entry.501386806" autocomplete="tel" class="form__text"
-								placeholder="000-0000-0000" required>
-						</li>
-						<li class="form__item">
-							<label for="tel" class="form__label">
-								住所<span><sup>★</sup>必須</span>
-							</label>
-							<input type="text" id="address" autocomplete="address-level2" class="form__text" placeholder="大阪府大阪市中央区北区南町5-6-7"
+							<input type="text" id="address" name="address-level2" class="form__text" placeholder="大阪府大阪市中央区北区南町5-6-7"
 								required>
 						</li>
 						<li class="form__item form__check">
-							<input class="form__input-check" id="input-check" type="checkbox" required>
+							<input class="form__input-check" id="input-check" name="checkbox" type="checkbox" required>
 							<label for="input-check">入力内容に間違いないことを確認しました</label>
 						</li>
 						<li class="form__item-btn">
@@ -168,15 +172,6 @@
 						</li>
 					</ul>
 				</form>
-				<script type="text/javascript">
-					var submitted = false;
-				</script>
-				<iframe
-					name="hidden_iframe"
-					id="hidden_iframe"
-					style="display: none"
-					onload="if(submitted)  {window.location='/thanks/#thanks-contents';}"
-				></iframe>
 			</div>
 		</section>
 		<section class="top-contact" id="top-contact">
@@ -198,7 +193,7 @@
 						</p>
 					</div>
 					<div class="top-contact__btn-box">
-						<a href="mailto:info@example.com" class="btn-more top-contact__btn">メールフォームはこちら</a>
+						<a href="/contact" class="btn-more top-contact__btn">メールフォームはこちら</a>
 					</div>
 				</div>
 			</div>
@@ -259,7 +254,7 @@
 						<a href="/#top-news">お知らせ</a>
 					</li>
 					<li class="footer__nav-item footer__nav-contact">
-						<a href="#contact-intro">お問い合わせ</a>
+						<a href="/contact">お問い合わせ</a>
 					</li>
 				</ul>
 			</nav>

@@ -161,6 +161,10 @@
 
 .footer__nav-item:nth-of-type(3) {
 	margin-right: 150px;
+
+	@include mq(lg) {
+		margin-right: 0;
+	}
 }
 
 .footer__nav-contact {

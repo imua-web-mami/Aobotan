@@ -113,11 +113,9 @@
 }
 
 .top-contact__b-hours {
+	font-size: 12px;
 	margin-top: 8px;
-
-	@include mq(lg) {
-		font-size: 12px;
-	}
+	font-weight: bold;
 }
 
 .top-contact__btn-box {

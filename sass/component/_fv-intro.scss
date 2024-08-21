@@ -23,11 +23,11 @@
 	&::before {
 		content: "";
 		display: block;
-		width: calc(727 / 1160 * 100%);
+		width: calc(727 / 1440 * 100vw);
 		aspect-ratio: 727 / 563;
 		background: $main-color;
 		position: absolute;
-		top: -40px;
+		top: 0;
 		right: 0;
 		z-index: -10;
 

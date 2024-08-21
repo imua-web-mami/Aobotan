@@ -364,11 +364,11 @@ button {
 .fv-box::before {
   content: "";
   display: block;
-  width: 62.6724137931%;
+  width: 50.4861111111vw;
   aspect-ratio: 727/563;
   background: #4282B8;
   position: absolute;
-  top: -40px;
+  top: 0;
   right: 0;
   z-index: -10;
 }
@@ -995,6 +995,11 @@ body.is-scroll {
 .footer__nav-item:nth-of-type(3) {
   margin-right: 150px;
 }
+@media screen and (max-width: 1024px) {
+  .footer__nav-item:nth-of-type(3) {
+    margin-right: 0;
+  }
+}
 
 .footer__nav-contact a {
   position: relative;
@@ -1172,6 +1177,7 @@ body.is-scroll {
   font-size: 64px;
   font-weight: bold;
   line-height: 1;
+  opacity: 0;
 }
 @media screen and (max-width: 1024px) {
   .main-visual__catch {
@@ -1184,6 +1190,7 @@ body.is-scroll {
   margin-top: 21px;
   font-weight: bold;
   line-height: 2;
+  opacity: 0;
 }
 @media screen and (max-width: 1024px) {
   .main-visual__text {
@@ -1921,12 +1928,9 @@ body.is-scroll {
 }
 
 .top-contact__b-hours {
+  font-size: 12px;
   margin-top: 8px;
-}
-@media screen and (max-width: 1024px) {
-  .top-contact__b-hours {
-    font-size: 12px;
-  }
+  font-weight: bold;
 }
 
 .top-contact__btn-box {
@@ -2015,6 +2019,7 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .about-company-overview__img {
     margin-inline: auto;
+    width: 80%;
   }
 }
 
@@ -2076,7 +2081,6 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .about-company-overview__td span {
     display: block;
-    margin-bottom: 8px;
   }
 }
 
@@ -2094,11 +2098,11 @@ body.is-scroll {
 }
 @media screen and (max-width: 1024px) {
   .about-safety__title:nth-of-type(1) {
-    margin-top: 34px;
+    margin-top: 40px;
   }
 }
 .about-safety__title:nth-of-type(2) {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .about-safety__contents {
@@ -2111,6 +2115,7 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .about-safety__contents {
     flex-direction: column;
+    gap: 26px;
   }
 }
 
@@ -2126,7 +2131,6 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .about-safety__text {
     width: 100%;
-    margin-top: 26px;
   }
 }
 
@@ -2241,7 +2245,6 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .service-contents__text {
     width: 100%;
-    margin-top: 20px;
   }
 }
 
@@ -2268,7 +2271,7 @@ body.is-scroll {
 }
 @media screen and (max-width: 1024px) {
   .service-contents__ex-item {
-    width: 312px;
+    max-width: 300px;
   }
 }
 
@@ -2291,7 +2294,7 @@ body.is-scroll {
 }
 @media screen and (max-width: 1024px) {
   .service-contents__ex-img {
-    width: 267px;
+    width: 100%;
   }
 }
 
@@ -2391,14 +2394,23 @@ body.is-scroll {
 }
 
 .contact__tel-number {
-  display: block;
   margin-top: 29px;
+  font-size: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .contact__tel-number {
+    font-size: 24px;
+  }
+}
+
+.contact__tel-number-link {
+  display: block;
   font-size: 32px;
   font-family: "Kanit", sans-serif;
   color: #000000;
 }
 @media screen and (max-width: 1024px) {
-  .contact__tel-number {
+  .contact__tel-number-link {
     font-size: 24px;
   }
 }
@@ -2429,7 +2441,13 @@ body.is-scroll {
   margin-top: 26px;
 }
 
-.form__label span {
+.form__label {
+  display: block;
+  width: 470px;
+  cursor: pointer;
+}
+
+.label-small {
   margin-left: 8px;
   font-size: 12px;
 }
@@ -2445,10 +2463,39 @@ sup {
 
 .form__radio {
   display: block;
+  cursor: pointer;
 }
 
 .form__radio + .form__radio {
   margin-top: 14px;
+}
+
+.form__radio-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4282B8;
+  border-radius: 50%;
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+.form__radio-button:hover {
+  cursor: pointer;
+}
+
+.form__radio-button:checked:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4282B8;
 }
 
 .form__text {
@@ -2459,6 +2506,7 @@ sup {
   background: #F8F8F8;
   border: 1px solid #B1C6DC;
   padding: 0 16px;
+  font-size: 16px;
 }
 @media screen and (max-width: 1024px) {
   .form__text {
@@ -2495,6 +2543,17 @@ sup {
   .form__name-box .form__text {
     width: 140px;
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .form__check {
@@ -2564,21 +2623,33 @@ sup {
   width: 284px;
   background: #4282B8;
   color: #fff;
-  border: none;
+  border: 1px solid #4282B8;
   opacity: 0.2;
   cursor: default;
 }
 .submit-btn.btn-more::after {
   background: #fff;
 }
-.submit-btn.btn-more:hover {
-  opacity: 0.2;
-}
 .submit-btn.btn-more:hover::after {
   width: 10px;
   height: 10px;
   top: 25px;
   right: 25px;
+}
+.submit-btn.btn-more.active {
+  opacity: 1;
+  cursor: pointer;
+}
+.submit-btn.btn-more.active:hover {
+  background: #fff;
+  color: #4282B8;
+}
+.submit-btn.btn-more.active:hover::after {
+  background: #4282B8;
+  width: 14px;
+  height: 14px;
+  top: 23px;
+  right: 23px;
 }
 
 .contact-page .top-contact {

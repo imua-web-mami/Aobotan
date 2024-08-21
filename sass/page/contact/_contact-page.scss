@@ -87,8 +87,16 @@
 }
 
 .contact__tel-number {
-	display: block;
 	margin-top: 29px;
+	font-size: 32px;
+
+	@include mq(lg) {
+		font-size: 24px;
+	}
+}
+
+.contact__tel-number-link {
+	display: block;
 	font-size: 32px;
 	font-family: "Kanit", sans-serif;
 	color: $text-color;
@@ -123,11 +131,14 @@
 }
 
 .form__label {
+	display: block;
+	width: 470px;
+	cursor: pointer;
+}
 
-	span {
-		margin-left: 8px;
-		font-size: 12px;
-	}
+.label-small {
+	margin-left: 8px;
+	font-size: 12px;
 }
 
 sup {
@@ -141,10 +152,38 @@ sup {
 
 .form__radio {
 	display: block;
+	cursor: pointer;
 }
 
 .form__radio+.form__radio {
 	margin-top: 14px;
+}
+
+.form__radio-button {
+	appearance: none;
+	position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $main-color;
+  border-radius: 50%;
+  vertical-align: -2px;
+	margin-right: 8px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.form__radio-button:checked:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $main-color;
 }
 
 .form__text {
@@ -155,6 +194,7 @@ sup {
 	background: $bg-color;
 	border: 1px solid $accent-color;
 	padding: 0 16px;
+	font-size: 16px;
 
 	@include mq(lg) {
 		width: 300px;
@@ -184,6 +224,17 @@ sup {
 			width: 140px;
 		}
 	}
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }
 
 .form__check {
@@ -249,7 +300,7 @@ sup {
 	width: 284px;
 	background: $main-color;
 	color: $white;
-	border: none;
+	border: 1px solid $main-color;
 	opacity: 0.2;
 	cursor: default;
 
@@ -258,13 +309,30 @@ sup {
 	}
 
 	&:hover {
-		opacity: 0.2;
 
 		&::after {
 			width: 10px;
 			height: 10px;
 			top: 25px;
 			right: 25px;
+		}
+	}
+
+	&.active {
+		opacity: 1;
+		cursor: pointer;
+
+		&:hover {
+			background: $white;
+			color: $main-color;
+
+			&::after {
+				background: $main-color;
+				width: 14px;
+				height: 14px;
+				top: 23px;
+				right: 23px;
+			}
 		}
 	}
 }
