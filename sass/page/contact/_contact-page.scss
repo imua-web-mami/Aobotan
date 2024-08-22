@@ -10,6 +10,12 @@
 	}
 }
 
+.contact-page .intro__text {
+	@include mq(lg) {
+		max-width: 570px;
+	}
+}
+
 .contact__flow-container {
 	margin-top: 62px;
 	display: flex;

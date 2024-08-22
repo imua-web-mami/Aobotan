@@ -65,7 +65,8 @@
 		@include mq(lg) {
 			width: 65px;
 			height: 78px;
-			left: 266px;
+			left: auto;
+			right: 40px;
 			top: -62px;
 		}
 	}

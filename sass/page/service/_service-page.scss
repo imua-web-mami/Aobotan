@@ -1,6 +1,6 @@
 @use "../../global/forward" as*;
 
-.intro::after {
+.service-page .intro::after {
 	background: url(../img/service-page-img.png);
 	background-size: contain;
 	height: 203px;
@@ -9,7 +9,8 @@
 	@include mq(lg) {
 		width: 65px;
 		height: 78px;
-		left: 266px;
+		left: auto;
+		right: 40px;
 		top: -62px;
 	}
 }

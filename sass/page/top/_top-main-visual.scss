@@ -17,9 +17,13 @@
 
 	@include mq(lg) {
 		width: calc(100% - 10px);
-		aspect-ratio: 365 / 589;
+		aspect-ratio: 1024 / 1280;
 		border-radius: 10px 0px 0px 10px;
 		margin: 0 0 0 10px;
+	}
+	
+	@media screen and (max-width: 600px) {
+		aspect-ratio: 365 / 589;
 	}
 
 	&::before {

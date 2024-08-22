@@ -408,7 +408,8 @@ button {
   .intro::after {
     width: 65px;
     height: 78px;
-    left: 266px;
+    left: auto;
+    right: 40px;
     top: -62px;
   }
 }
@@ -1050,9 +1051,14 @@ body.is-scroll {
 @media screen and (max-width: 1024px) {
   .main-visual__contents {
     width: calc(100% - 10px);
-    aspect-ratio: 365/589;
+    aspect-ratio: 1024/1280;
     border-radius: 10px 0px 0px 10px;
     margin: 0 0 0 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-visual__contents {
+    aspect-ratio: 365/589;
   }
 }
 .main-visual__contents::before {
@@ -2143,17 +2149,18 @@ body.is-scroll {
   }
 }
 
-.intro::after {
+.service-page .intro::after {
   background: url(../img/service-page-img.png);
   background-size: contain;
   height: 203px;
   left: 538px;
 }
 @media screen and (max-width: 1024px) {
-  .intro::after {
+  .service-page .intro::after {
     width: 65px;
     height: 78px;
-    left: 266px;
+    left: auto;
+    right: 40px;
     top: -62px;
   }
 }
@@ -2315,6 +2322,12 @@ body.is-scroll {
   background: url(../img/contact-img.png) no-repeat;
   background-size: contain;
   height: 178px;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-page .intro__text {
+    max-width: 570px;
+  }
 }
 
 .contact__flow-container {
