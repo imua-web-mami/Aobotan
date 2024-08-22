@@ -169,18 +169,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const contactForm = document.getElementById("js-form");
-  const submitButton = document.getElementById("js-submit");
 
-  contactForm.addEventListener("input", function () {
-    update(contactForm, submitButton);
-  });
+  // フォームが存在する場合のみ、以下のコードを実行する
+  if (contactForm) {
+    const submitButton = document.getElementById("js-submit");
 
-  function update(form, button) {
-    const isRequired = form.checkValidity();
-    if (isRequired) {
-      button.classList.add('active');
-    } else {
-      button.classList.remove('active');
+    contactForm.addEventListener("input", function () {
+      update(contactForm, submitButton);
+    });
+
+    function update(form, button) {
+      const isRequired = form.checkValidity();
+      if (isRequired) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
     }
   }
 });
