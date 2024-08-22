@@ -111,7 +111,7 @@
 						</p>
 					</div>
 				</div>
-				<form method="post" class="contact__form" id="contactForm" target="hidden_iframe" onsubmit="submitted=true;">
+				<form method="post" class="contact__form" id="js-form" target="hidden_iframe" onsubmit="location.href='/thanks'">
 					<ul class="form__list">
 						<li class="form__item">
 							<p>
@@ -160,7 +160,7 @@
 							<label for="address" class="form__label">
 								住所<span class="label-small"><sup>★</sup>必須</span>
 							</label>
-							<input type="text" id="address" name="address-level2" class="form__text" placeholder="大阪府大阪市中央区北区南町5-6-7"
+							<input type="text" id="address" name="address-level2" autocomplete="address-level2" class="form__text" placeholder="大阪府大阪市中央区北区南町5-6-7"
 								required>
 						</li>
 						<li class="form__item form__check">

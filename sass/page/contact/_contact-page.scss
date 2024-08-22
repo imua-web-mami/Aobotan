@@ -134,6 +134,10 @@
 	display: block;
 	width: 470px;
 	cursor: pointer;
+
+	@include mq(lg) {
+		width: 100%;
+	}
 }
 
 .label-small {
