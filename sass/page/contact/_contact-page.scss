@@ -124,8 +124,6 @@
 
 .contact-form {
 	margin-top: 17px;
-	line-height: 1;
-	font-weight: bold;
 
 	@include mq(lg) {
 		margin-top: 72px;
@@ -134,6 +132,8 @@
 
 .form__item {
 	margin-top: 26px;
+	font-weight: bold;
+	line-height: 1;
 }
 
 .form__label {

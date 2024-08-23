@@ -169,7 +169,7 @@ button {
 .section-title-en {
   display: block;
   margin-top: 20px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0);
   font-family: "Kanit", sans-serif;
   font-size: 128px;
   font-weight: bold;
@@ -257,6 +257,7 @@ button {
   -moz-text-align-last: left;
        text-align-last: left;
   padding-left: 68px;
+  border: none;
 }
 .top-contact__btn::before {
   content: "";
@@ -657,6 +658,7 @@ body.is-scroll {
 .header__about-item a,
 .header__service-item a {
   font-size: 14px;
+  font-weight: bold;
   display: block;
   padding: 12px 0;
   color: #000000;
@@ -1861,10 +1863,6 @@ body.is-scroll {
   }
 }
 
-.top-contact .section-title-en {
-  color: #F8F8F8;
-}
-
 .top-contact__contents {
   margin-top: 39px;
   height: 68px;
@@ -2441,8 +2439,6 @@ body.is-scroll {
 
 .contact-form {
   margin-top: 17px;
-  line-height: 1;
-  font-weight: bold;
 }
 @media screen and (max-width: 1024px) {
   .contact-form {
@@ -2452,6 +2448,8 @@ body.is-scroll {
 
 .form__item {
   margin-top: 26px;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .form__label {
